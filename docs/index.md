@@ -7,7 +7,8 @@ hide:
 
 ### Grupos
 
-<div class="grid cards" style="grid-template-columns: repeat(2, 1fr); background: var(--md-default-bg-color);" markdown>
+<div class="grid cards" style="grid-template-columns: 1fr;" markdown>
+
 
 -   :material-github:{ .lg .right } __PFE_25.2_8002_III__
 
