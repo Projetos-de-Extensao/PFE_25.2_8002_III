@@ -12,7 +12,7 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ### 2.1. Lista de Sites Analisados
 
-* [Nome do Site 1](URL_DO_SITE_1)
+* [Linkdin](https://www.linkedin.com/jobs/)
 * [Nome do Site 2](URL_DO_SITE_2)
 * [Nome do Site 3](URL_DO_SITE_3)
 
@@ -22,25 +22,22 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 Para cada site listado, faremos uma avaliação individual.
 
-#### **Análise do [Nome do Site 1]**
+#### **Análise do LinkedIn**
 
 * **Vantagens (Pontos Fortes):**
-    * **Usabilidade:** Interface limpa e intuitiva.
-    * **Funcionalidade Chave:** O recurso X é muito bem implementado e resolve o problema Y de forma eficaz.
-    * **Design:** Estilo visual moderno e agradável.
-    * **Desempenho:** Carregamento rápido.
+    * **Usabilidade:** Fácil de pesquisar por uma vaga específica, ótimos filtros.
+    * **Funcionalidade:** É possível ver a lista de vagas e a seção de descrição da vaga na mesma tela.
+    * **Funcionalidade:** Permite criar um alerta para uma busca de vagas para ser notificado quando novas oportunidades com os mesmos critérios aparecerem.
 
 * **Desvantagens (Pontos Fracos):**
-    * **Navegação:** Fluxo de usuário para a tarefa Z é confuso.
-    * **Funcionalidade Faltante:** Não oferece a funcionalidade W, que seria útil.
-    * **Mobile:** A experiência em dispositivos móveis é inconsistente.
-    * **Preços:** Modelo de assinatura pouco claro.
+    * **Design:** O design é um pouco confuso, dificultando a leitura de todas as informações.
+    * **Funcionalidade:** A complexidade deste site é muito alta para o projeto que estamos desenvolvendo.
+    * **Funcionalidade:** Em algumas vagas, clicar em "Candidatar-se" leva o usuário para outro site.
 
 * **Funcionalidades Relevantes para o Nosso Projeto:**
-    * [Funcionalidade A]: Poderíamos implementar de forma similar para...
-    * [Funcionalidade B]: Uma versão aprimorada desta funcionalidade nos daria um diferencial.
-    * [Funcionalidade C]: Essencial para a proposta de valor principal.
-
+    * **[Funcionalidade A]:** Exibir a listagem de vagas e a descrição da vaga ao mesmo tempo, na mesma tela.
+    * **[Funcionalidade B]:** Em vez de uma página que fala sobre a empresa, pode haver uma página que fale sobre o professor ou a disciplina.
+    * **[Funcionalidade C]:** Pode haver um filtro para pesquisar por disciplinas da universidade em vez de cargos.
 ---
 
 #### **Análise do [Nome do Site 2]**
