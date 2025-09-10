@@ -23,21 +23,19 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 #### **Análise do LinkedIn**
 
 * **Vantagens (Pontos Fortes):**
-  * Fácil busca e filtros avançados.
-  * Possibilidade de criar alertas de vagas salvas.
-  * Visualização de lista e descrição da vaga na mesma tela.
-  * Opção de candidatura rápida (“Easy Apply”) ou via site da empresa.
-  * Recursos de IA para análise de adequação (premium).
+  * **Usabilidade:** Fácil de pesquisar por uma vaga específica, ótimos filtros.
+  * **Funcionalidade:** É possível ver a lista de vagas e a seção de descrição da vaga na mesma tela.
+  * **Funcionalidade:** Permite criar um alerta para uma busca de vagas para ser notificado quando novas oportunidades com os mesmos critérios aparecerem.
 
 * **Desvantagens (Pontos Fracos):**
-  * Algumas vagas redirecionam para sites externos.
-  * Concorrência muito alta no “Easy Apply”.
-  * Alguns recursos úteis só estão no plano premium.
+  * **Design:** O design é um pouco confuso, dificultando a leitura de todas as informações.
+  * **Funcionalidade:** A complexidade deste site é muito alta para o projeto que estamos desenvolvendo.
+  * **Funcionalidade:** Em algumas vagas, clicar em "Candidatar-se" leva o usuário para outro site.
 
 * **Funcionalidades Relevantes para o Nosso Projeto:**
-  * Exibir listagem de oportunidades e descrição lado a lado.
-  * Permitir salvar buscas e receber alertas personalizados.
-  * Criar um fluxo de candidatura rápida dentro da própria plataforma.
+  * **[Funcionalidade A]:** Exibir a listagem de vagas e a descrição da vaga ao mesmo tempo, na mesma tela.
+  * **[Funcionalidade B]:** Em vez de uma página que fala sobre a empresa, pode haver uma página que fale sobre o professor ou a disciplina.
+  * **[Funcionalidade C]:** Pode haver um filtro para pesquisar por disciplinas da universidade em vez de cargos.
 
 ---
 
