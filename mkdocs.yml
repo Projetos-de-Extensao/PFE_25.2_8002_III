@@ -1,8 +1,8 @@
 ---
-repo_url: https://github.com/jonh-carvalho/PFE_25.1_8001
-site_author: Jonh Carvalho
-site_name: PFE_25.1_8001
-copyright: Copyright ©️ 2025, jonh-carvalho / 2025, Jonh Carvalho
+repo_url: https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III
+site_author: João Márcio Prado Silva, Nicholas Borges de Vasconcelos, Victor Robson, Matheus pinguim
+site_name: PFE_25.2_8002_III
+copyright: Copyright ©️ 2025, João Márcio Prado Silva, Nicholas Borges de Vasconcelos, Victor Robson, Matheus pinguim / 2025, João Márcio Prado Silva, Nicholas Borges de Vasconcelos, Victor Robson, Matheus pinguim
 
 extra_css:
   - css/extra.css
