@@ -1,4 +1,12 @@
-# Projeto Front-End
+# Grupo 3 - Projeto CASA Monitor
+
+## Alunos
+|Matrícula | Aluno |
+| -- | -- |
+| 202407138829 |  Nicholas Borges de Vasconcelos |
+| 000000000000 |  João Márcio Prado Silva |
+| 000000000000 |  Victor Robson |
+| 000000000000 |  Matheus Pinguim |
 
 ## Sobre 
 Disciplina que planeja o desenvolvimento de um Front-End a partir de uma demanda externa. 
@@ -7,7 +15,7 @@ Disciplina que planeja o desenvolvimento de um Front-End a partir de uma demanda
 Adicione 3 ou mais screenshots do projeto em termos de interface e funcionamento.
 
 ## Instalação 
-**Linguagens**: Html, Css, javascript<br>
+**Linguagens**: Python, Html, Css, javascript<br>
 **Tecnologias**: Github, Github Pages e Visual Studio Code<br>
 
 ## Uso 
