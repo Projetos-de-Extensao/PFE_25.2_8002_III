@@ -12,7 +12,7 @@ Mapa mental consiste em criar resumos cheios de símbolos, cores, setas e frases
 ## Metodologia
  
 <p align = "justify">
-Foi levantado um ponto importante sobre o app e, assim, foi produzido o mapa mental. O documento foi produzido utilizando a ferramenta...
+Criamos um mapa mental depois da pesquisa (v.1) e um mapa mental depois do brainstorm (v.2).
 </p>
  
 ## Mapa mental - Geral.
@@ -21,7 +21,7 @@ Foi levantado um ponto importante sobre o app e, assim, foi produzido o mapa men
  
 ### Mapa mental 1
  
-[![Mapa mental Entrevista]
+![Mapa Mental](../assets/Mapa_mental/mapamental_ver1.png)
  
  
 ### Mapa mental 2
