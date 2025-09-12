@@ -85,7 +85,7 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ### 2.2.4. Análise do Fiverr.com
 
-<img src="\assets\Pesquisa\Fiverr_Screenshot.png" width=700>
+<img src="..\assets\Pesquisa\Fiverr_Screenshot.png" width=700>
 
 *   **Vantagens (Pontos Fortes):**
     * O trabalho é oferecido em pacotes com escopo e preço definidos.
