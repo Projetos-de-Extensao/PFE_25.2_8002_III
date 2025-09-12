@@ -21,7 +21,7 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ### 2.2. Análise Detalhada
 
-#### **Análise do LinkedIn**
+### 2.2.1. Análise do LinkedIn
 
 <img src="\assets\Pesquisa\LinkedIn_Screenshot.png" width=700>
 
@@ -42,7 +42,9 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ---
 
-#### **Análise do Gupy – Portal de Vagas**
+### 2.2.2. Análise do Gupy – Portal de Vagas
+
+<img src="\assets\Pesquisa\Gupy_Screenshot.png" width=700>
 
 *   **Vantagens (Pontos Fortes):**
     * Cadastro único com acompanhamento de status das candidaturas.
@@ -61,7 +63,9 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ---
 
-#### **Análise do Vagas.com.br**
+### 2.2.3. Análise do Vagas.com.br
+
+<img src="\assets\Pesquisa\Vagas_Screenshot.png" width=700>
 
 *   **Vantagens (Pontos Fortes):**
     * Filtros avançados de busca (região, área, PCD etc.).
@@ -79,22 +83,24 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ---
 
-#### **Análise do Fiverr.com**
+### 2.2.4. Análise do Fiverr.com
 
-* **Vantagens (Pontos Fortes):**
-  * O trabalho é oferecido em pacotes com escopo e preço definidos.
-  * A reputação é construída através de um sistema público de avaliações e portfólio.
-  * Ideal para projetos e tarefas menores com objetivos claros.
+<img src="\assets\Pesquisa\Fiverr_Screenshot.png" width=700>
 
-* **Desvantagens (Pontos Fracos):**
-  *  O contato inicial entre as partes é restrito para manter a negociação dentro do site, o que pode dificultar alinhamentos.
-  * Pode gerar um "custo" de tempo para o contratante ao ter que gerenciar múltiplos pequenos projetos com diferentes freelancers.
+*   **Vantagens (Pontos Fortes):**
+    * O trabalho é oferecido em pacotes com escopo e preço definidos.
+    * A reputação é construída através de um sistema público de avaliações e portfólio.
+    * Ideal para projetos e tarefas menores com objetivos claros.
 
-* **Funcionalidades Relevantes para o Nosso Projeto:**
-  * Permitir que alunos criem um "cardápio" de serviços acadêmicos que podem oferecer à comunidade universitária.
-  * Ajuda os professores a identificar rapidamente alunos com um bom histórico na plataforma, aumentando a confiança para delegar tarefas importantes.
-  * Após uma tarefa, o professor avalia o aluno e o aluno avalia a experiência do projeto, ajudando a comunidade a identificar boas parcerias.
-  * Mural de "Micro-oportunidades": Criar uma área onde professores postam tarefas rápidas (ex: "ajuda em laboratório por um dia") para alunos interessados.
+*   **Desvantagens (Pontos Fracos):**
+    *  O contato inicial entre as partes é restrito para manter a negociação dentro do site, o que pode dificultar alinhamentos.
+    * Pode gerar um "custo" de tempo para o contratante ao ter que gerenciar múltiplos pequenos projetos com diferentes freelancers.
+
+*   **Funcionalidades Relevantes para o Nosso Projeto:**
+    * Permitir que alunos criem um "cardápio" de serviços acadêmicos que podem oferecer à comunidade universitária.
+    * Ajuda os professores a identificar rapidamente alunos com um bom histórico na plataforma, aumentando a confiança para delegar tarefas importantes.
+    * Após uma tarefa, o professor avalia o aluno e o aluno avalia a experiência do projeto, ajudando a comunidade a identificar boas parcerias.
+    * Mural de "Micro-oportunidades": Criar uma área onde professores postam tarefas rápidas (ex: "ajuda em laboratório por um dia") para alunos interessados.
 
 ---
 
