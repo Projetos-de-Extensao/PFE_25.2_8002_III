@@ -14,8 +14,8 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 * [LinkedIn Jobs](https://www.linkedin.com/jobs/)
 * [Gupy – Portal de Vagas](https://portal.gupy.io/)
-* [Vagas.com.br](https://www.vagas.com.br/)
-* [Handshake.com](https://www.joinhandshake.com)
+* [Vagas](https://www.vagas.com.br/)
+* [Fiverr](https://www.fiverr.com/)
 
 ---
 
@@ -79,22 +79,26 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ---
 
-#### **Análise do Handshake.com**
+---
 
-*   **Vantagens (Pontos Fortes):**
-    * Ponto 1
-    * Ponto 2
-    * Ponto 3
+#### **Análise do Fiverr.com**
 
-*   **Desvantagens (Pontos Fracos):**
-    * Ponto 1
-    * Ponto 2
-    * Ponto 3
+* **Vantagens (Pontos Fortes):**
+  * O trabalho é oferecido em pacotes com escopo e preço definidos.
+  * A reputação é construída através de um sistema público de avaliações e portfólio.
+  * Ideal para projetos e tarefas menores com objetivos claros.
 
-*   **Funcionalidades Relevantes para o Nosso Projeto:**
-    * Ponto 1
-    * Ponto 2
-    * Ponto 3
+* **Desvantagens (Pontos Fracos):**
+  *  O contato inicial entre as partes é restrito para manter a negociação dentro do site, o que pode dificultar alinhamentos.
+  * Pode gerar um "custo" de tempo para o contratante ao ter que gerenciar múltiplos pequenos projetos com diferentes freelancers.
+
+.
+
+* **Funcionalidades Relevantes para o Nosso Projeto:**
+  * Permitir que alunos criem um "cardápio" de serviços acadêmicos que podem oferecer à comunidade universitária.
+  * Ajuda os professores a identificar rapidamente alunos com um bom histórico na plataforma, aumentando a confiança para delegar tarefas importantes.
+  * Após uma tarefa, o professor avalia o aluno e o aluno avalia a experiência do projeto, ajudando a comunidade a identificar boas parcerias.
+  * Mural de "Micro-oportunidades": Criar uma área onde professores postam tarefas rápidas (ex: "ajuda em laboratório por um dia") para alunos interessados.
 
 ---
 
