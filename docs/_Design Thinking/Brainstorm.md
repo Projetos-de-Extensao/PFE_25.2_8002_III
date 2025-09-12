@@ -10,7 +10,7 @@ O brainstorm é uma técnica de elicitação de requisitos que consiste em reuni
  
 ## Metodologia
 <p align = "justify">
-A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .... e terminou..., onde o XXXX XXXX foi o moderador, direcionando a equipe com questões pré-elaboradas, e transcrevendo as respostas para o documento.
+Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, individualmente, adicionamos nossas respostas ao documento. Em seguida, nos reunimos para decidir os requisitos do projeto.
 </p>
  
 ## Brainstorm
@@ -22,7 +22,7 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 ### 1. Qual o objetivo principal da aplicação?
  
 <p align = "justify">
-<b>XXXX</b> - Deve ser uma plataforma onde qualquer pessoa possa...
+<b>Nicholas</b> - O objetivo principal e criar mu website para o Programa de Monitores do departamento CASA. A plataforma servirá como um portal centralizado para a publicação de vagas para cada disciplina.
 </p>
  
 <b>ZZZ</b> - A plataforma deve fornece...
@@ -36,10 +36,10 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
  
 ---
  
-### 2. Como será o processo para cadastrar um novo clientetorneio?
+### 2. Como será o processo para cadastrar um novo usuario?
  
 <p align = "justify">
-<b>XXXX</b> - O moderador deverá fazer login e...
+<b>Nicholas</b> - O processo para cadastrar um novo usuário deve ser fácil e rápido, tanto para o professor, aluno e administrador. Em um contexto real, a universidade já terá os registros dos usuários.
  
 <b>YYYY</b> - O cliente...
  
@@ -51,10 +51,10 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
  
 ---
  
-### 3. Como será a forma de adicionar produtos?
+### 3. Como será a forma de adicionar vagas de monitoria?
  
 <p align = "justify">
-<b>XXXX</b> - O cliente ao cadastrar...
+<b>Nicholas</b> - O professor poderá criar uma vaga de monitoria para que os alunos se candidatem, com base nas disciplinas que ele leciona.
 </p>
  
 <p align = "justify">
@@ -68,10 +68,10 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
  
 ---
  
-### 4. Outras perguntas pertinentes ao contexto
+### 4. Outras perguntas pertinentes ao contexto?
 
 <p align = "justify">
-<b>XXXX</b> - Com a localização...
+<b>Nicholas</b> - Quantos alunos poderão se candidatar a uma vaga de monitoria e quem deverá decidir esse limite?
  
 <b>YYYY</b> - O cliente...
  
@@ -79,14 +79,16 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
  
 ---
  
-### 5. "Outras perguntas pertinentes ao contexto", Como seria a forma de adicionar do cliente adicionar os produtos ?
+### 5. O que o administrador deveria ver no dashboard?
 <p align = "justify">
-<b>XXX</b> - O cliente....
+<b>Nicholas</b> - O administrador vai precisar ter um filtro para ver certas vagas de monitoria.
 </p>
- 
-### 6. Quais informações seriam interessante para o cliente?
+
+---
+
+### 6. Quais informações seriam interessante para o usuarios?
 <p align = "justify">
-   <b>XXX</b> - Informações...
+   <b>Nicholas</b> - Seria interessante o usarios poderem ver o status da vaga.
    
    <b>ZZZZ</b> - O cliente usuário poderá acessar informações...
 
@@ -127,3 +129,4 @@ Através da aplicação da técnica, foi possível elicitar alguns dos primeiros
 | Data | Versão | Descrição | Autor(es) |
 | -- | -- | -- | -- |
 | DD/MM/YYYY | 1.0 | Criação do documento | XXX XXXX, XXXX XXXX, YYY YYYY e ZZZ XXXX |
+
