@@ -77,8 +77,6 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ---
 
----
-
 #### **Análise do Fiverr.com**
 
 * **Vantagens (Pontos Fortes):**
@@ -89,8 +87,6 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 * **Desvantagens (Pontos Fracos):**
   *  O contato inicial entre as partes é restrito para manter a negociação dentro do site, o que pode dificultar alinhamentos.
   * Pode gerar um "custo" de tempo para o contratante ao ter que gerenciar múltiplos pequenos projetos com diferentes freelancers.
-
-.
 
 * **Funcionalidades Relevantes para o Nosso Projeto:**
   * Permitir que alunos criem um "cardápio" de serviços acadêmicos que podem oferecer à comunidade universitária.
