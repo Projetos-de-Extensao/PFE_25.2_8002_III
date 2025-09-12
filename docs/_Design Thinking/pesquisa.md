@@ -23,7 +23,7 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ### 2.2.1. Análise do LinkedIn
 
-<img src="\assets\Pesquisa\LinkedIn_Screenshot.png" width=700>
+<img src="..\assets\Pesquisa\LinkedIn_Screenshot.png" width=700>
 
 *   **Vantagens (Pontos Fortes):**
     * **Usabilidade:** Fácil de pesquisar por uma vaga específica, ótimos filtros.
@@ -44,7 +44,7 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ### 2.2.2. Análise do Gupy – Portal de Vagas
 
-<img src="\assets\Pesquisa\Gupy_Screenshot.png" width=700>
+<img src="..\assets\Pesquisa\Gupy_Screenshot.png" width=700>
 
 *   **Vantagens (Pontos Fortes):**
     * Cadastro único com acompanhamento de status das candidaturas.
@@ -65,7 +65,7 @@ Nesta seção, documentaremos os sites concorrentes ou similares que foram anali
 
 ### 2.2.3. Análise do Vagas.com.br
 
-<img src="\assets\Pesquisa\Vagas_Screenshot.png" width=700>
+<img src="..\assets\Pesquisa\Vagas_Screenshot.png" width=700>
 
 *   **Vantagens (Pontos Fortes):**
     * Filtros avançados de busca (região, área, PCD etc.).
