@@ -24,8 +24,10 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 <p align = "justify">
 <b>Nicholas</b> - O objetivo principal e criar mu website para o Programa de Monitores do departamento CASA. A plataforma servirá como um portal centralizado para a publicação de vagas para cada disciplina.
 </p>
- 
-<b>ZZZ</b> - A plataforma deve fornece...
+
+<p align = "justify">
+<b>Victor</b> - O objetivo principal é criar um website para o Monitores IBMEC. A plataforma deve servir como um ""portal" para a publicações de vagas relacionadas a cada disciplina desejada pelo CASA/Professores IBMEC.
+</p>
  
 <b>YYYY</b> - O objetivo da aplicação é....
  
@@ -40,9 +42,11 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
  
 <p align = "justify">
 <b>Nicholas</b> - O processo para cadastrar um novo usuário deve ser fácil e rápido, tanto para o professor, aluno e administrador. Em um contexto real, a universidade já terá os registros dos usuários.
- 
-<b>YYYY</b> - O cliente...
- 
+
+<p align = "justify"> 
+<b>Victor</b> - O processo de cadastro deverá ser separado pelos clientes, alunos, professores e administradores (CASA). Os alunos informam seu Nome, CPF e matrícula (principal dado que já contem os registros de cada aluno na universidade, nome e CPF seriam mais como validor do aluno). Essa cadastro daria ao aluno o acesso as vagas postadas no portal, de acordo com seu sua nota e CR. Os professores teriam que informar nome, CPF e matrícula, porém o acesso seria para postar as vagas preteridas por eles. Já os administradores (CASA) o acesso seria por forma de matrícula e um autentificador de 2 fatores, já que eles seriam a parte com mais permissões no portal, deve criar uma segurança maior.
+</p>
+
 <b>WWWW</b> - Com o usuário logado, ele deverá...
 
 <b>ZZZZ</b> - O cliente...
@@ -58,7 +62,7 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 </p>
  
 <p align = "justify">
-<b>YYYYY</b> - O produto tem...
+<b>Victor</b> - O professor deverá solicitar a criação da vaga, de acordo com as necessidades da matéria, os números de monitores desejados. E enviar esse cadastro para o CASA (ADMIN), liberar a vaga para o portal.
 </p>
  
 <b>ZZZZ</b> - O produto....
@@ -72,8 +76,10 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 
 <p align = "justify">
 <b>Nicholas</b> - Quantos alunos poderão se candidatar a uma vaga de monitoria e quem deverá decidir esse limite?
- 
-<b>YYYY</b> - O cliente...
+
+<p align = "justofy">
+<b>Victor</b> - Pode ter um filtro baseado nas notas e CR de cada aluno. Com no máximo 20 selecionados para cada vaga de monitoria, estando aptos a participarem de outros processos de seleção, como entrevistas e afins.
+</p>
  
 <b>ZZZ</b> - O cliente...
  
@@ -84,14 +90,17 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 <b>Nicholas</b> - O administrador vai precisar ter um filtro para ver certas vagas de monitoria.
 </p>
 
+<p align = "justify">
+<b>Victor</b> - Um filtro geral, com a parte de matriculas, para professores, alunos e admins. Vendo também as vagas criadas pelos professores e as já "ativas no portal", alunos que estão selecionados em cada vaga, entre outros.
+</p>
 ---
 
 ### 6. Quais informações seriam interessante para o usuarios?
 <p align = "justify">
    <b>Nicholas</b> - Seria interessante o usarios poderem ver o status da vaga.
    
-   <b>ZZZZ</b> - O cliente usuário poderá acessar informações...
-
+   <b>Victor</b> - Alunos, ver um dashboard para inserir os dados selecionados, o próximo onde teria as vagas que ele poderia concorrer de acordo com a nota e CR.
+   
    <b>WWWWs</b> - O usuário poderá ver scouts de partidas do torneio, ver as regras dos torneios, locais e data das partidas.
    
 </p>
