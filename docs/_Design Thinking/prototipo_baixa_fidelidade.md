@@ -16,8 +16,6 @@ Para a criação destes diagramas de interface, foi utilizada a ferramenta onlin
 
 ## Protótipo de baixa fidelidade
 
-### Versão 1.0
-
 ### Tela Login
 A página de entrada para todos os usuários.
 
@@ -44,8 +42,7 @@ A página de entrada para todos os usuários.
 ### Tela Painel do Aluno
 A visão principal para o aluno encontrar e se candidatar às vagas de monitoria.
 
-
-![Tela Painel Aluno UML](../assets/Baixa_Fidelidade/UML_Tela_Cadastro_Aluno.png)
+![Tela Painel Aluno UML](../assets/Baixa_Fidelidade/UML_Tela_Aluno.png)
 
 ```
 @startsalt
