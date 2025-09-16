@@ -1,17 +1,17 @@
 ---
 id: prototipo
-title: Protótipo
+title: Protótipo Baixa Fidelidade
 ---
 ## Introdução
 
 <p align = "justify">
-A construção do protótipo de alta fidelidade auxilia a equipe de desenvolvimento a encontrar um nível de detalhes abrangentes, extrair funcionalidades, testar usabilidade, e também fornece uma base para o gerenciamento do projeto pois com o protótipo é possível realizar estimativas de quanto tempo será necessário desempenhar em cada funcionalidade.
+Este documento apresenta os mockups de baixa fidelidade (low-fidelity) para as telas principais da plataforma Monitor CASA.  O objetivo é definir e visualizar a estrutura fundamental e os fluxos de navegação para os diferentes perfis de usuário antes de avançar para o design visual detalhado.
 </p>
 
 ## Metodologia
 
 <p align = "justify">
-Iniciamos o projeto através dos levantamentos iniciais da equipe, após discussões a ferramenta Figma foi selecionada para produzir o protótipo de alta fidelidade com auxílio do Material Design Color Tool.
+Para a criação destes diagramas de interface, foi utilizada a ferramenta online PlantText, que renderiza a sintaxe Salt do PlantUML. Este método foi escolhido para visualizar rapidamente a estrutura, o fluxo de navegação e as funcionalidades essenciais de cada página, focando na usabilidade antes da fase de design visual detalhado. 
 </p>
 
 ## Protótipo de baixa fidelidade
@@ -19,131 +19,190 @@ Iniciamos o projeto através dos levantamentos iniciais da equipe, após discuss
 ### Versão 1.0
 
 ### Tela Login
+A página de entrada para todos os usuários.
 
-Prototipo 1
-![Alt text](https://example.com/image.jpg "Image Title")
+![Tela Login UML](../assets/Baixa_Fidelidade/UML_Tela_Login.png)
 
-### Tela Cadastro 1
+```
+@startsalt
+{
+  title "Monitor CASA - Entrar"
+  Endereço de Email
+  ("seu.email@alunos.ibmec.com.br")
+  .
+  Senha:
+  ("******************************")
+  .
+  [          Entrar           ]
+  
+  "Esqueceu a senha?"
+}
+@endsalt
 
-[![Prototipo 2]
+```
 
-### Tela Cadastro 2
+### Tela Painel do Aluno
+A visão principal para o aluno encontrar e se candidatar às vagas de monitoria.
 
-[![Prototipo 3]
 
-### Tela Esqueceu Senha
+![Tela Painel Aluno UML](../assets/Baixa_Fidelidade/UML_Tela_Cadastro_Aluno.png)
 
-[![Prototipo 4]
+```
+@startsalt
+{
+  title "Painel do Aluno"
+  {
+    "<b>Painel</b>" | "Minhas Candidaturas" | "Perfil, Nome do Aluno]"
+  }
+  ---
+  {+
+    "Encontre sua Próxima Oportunidade!"
+    {
+      ("Buscar por matéria, professor...")
+      [Filtrar]
+    }
+    --
+    "<b>Vagas Disponíveis (2)</b>"
+    .
+    {#
+      {|
+        "<b>CC101: Modelagem Computational</b>"
+        "Professor(a): Prof. Danielle"
+        "Descrição: Ajudar alunos do primeiro ano com laboratórios..."
+        [Ver/Candidatar-se]
+      |}
+    }
+    .
+    {#
+      {|
+        "<b>FIS250: Programação Orientada a Objetos</b>"
+        "Professor(a): Prof. Talita"
+        "Descrição: Conduzir sessões de revisão semanais...          "
+        [Ver/Candidatar-se]
+      |}
+    }
+  }
+}
+@endsalt    
+```
 
-### Tela do Feed
+### Tela Painel do Professor
+A tela para professores gerenciarem suas vagas e visualizarem os candidatos.
 
-[![Prototipo 5]
+![Tela Painel Professor UML](../assets/Baixa_Fidelidade/UML_Tela_Professor.png)
 
-### Tela Feed com configurações
+```
+@startsalt
+{
+  title "Painel do Professor"
+  {
+    "<b>Painel</b>" | "Minhas Vagas" | "Perfil, [Nome do Professor]"
+  }
+  ---
+  {+
+    {
+      "Gerencie suas Vagas de Monitoria" | "[+ Criar Nova Vaga]"
+    }
+    --
+    "<b>Minhas Vagas Ativas</b>"
+    .
+    {#
+      {|
+        "<b>CC101: Programação Orientada a Objetos</b>"
+        "Status: Aberta" | "Candidatos: 5" 
+        [Ver Candidatos] | [Editar] | [Excluir]
+      |}
+    }
+  }
+}
+@endsalt
+```
 
-[![Prototipo 6]
+### Tela Painel do Admin
+A visão geral para administradores, com estatísticas e ferramentas de gerenciamento de usuários.
+![Tela Painel Professor UML](../assets/Baixa_Fidelidade/UML_Tela_Admin.png)
 
-### Tela Perfil
+```
+@startsalt
+{
+  title "Painel do Administrador"
+  {
+    "<b>Visão Geral</b>" | "Gerenciar Usuários" | "Relatórios" | "Bem-vindo(a), [Nome do Admin]"
+  }
+  ---
+  {+
+    "<b>Resumo Rápido</b>"
+    {#
+      {|
+        "150 Alunos no Total" | "35 Professores no Total"
+        "12 Vagas Abertas" | "45 Candidaturas no Total"
+      |}
+    }
+    --
+    "<b>Gerenciar Usuários</b>"
+    [ "Alunos"
+    {
+      {|
+        "<b>Nome</b>" | "<b>VagaEmail</b>" | "<b>Registrado em</b>" | "<b>Ações</b>"
+        "João da Silva" | "CC101: Programação Orientada a Objetos" | "15-09-2025" | [Ver/Editar]
+        "Maria Souza" | "CC101: Modelagem Computational" | "14-09-2025" | [Ver/Editar]
+        "Carlos Pereira"| "CC101: Projeto Front-End" | "12-09-2025" | [Ver/Editar]
+      |}
+    }
+  }
+}
+@endsalt
+```
 
-[![Prototipo 7]
 
-### Tela Cadastrar torneio 1
+### Tela de Detalhes da Vaga
+Esta página fornece todas as informações sobre uma vaga específica e permite que o aluno inicie o processo de candidatura.
 
-[![Prototipo 8]
-### Tela Cadastrar torneio 2
+![Tela Painel Professor UML](../assets/Baixa_Fidelidade/UML_Tela_Detalhes_Vaga.png)
 
-[![Prototipo 9]
+```
+@startsalt
+{
+  title "Detalhes da Vaga"
+  {
+    "Painel" | "Minhas Candidaturas" | "Perfil, [Nome do Aluno]"
+  }
+  ---
+  {+
+    [Voltar para a lista de vagas]
+    .
+    .
+    --
+    "<b>Programação Orientada a Objetos</b>"
+    "Professor(a): Prof. Talita"
+    "Departamento: Ciência da Computação"
+    
+    --
+    "Descrição Completa"
+    O monitor será responsável por auxiliar os alunos do primeiro
+    ano com os exercícios de laboratório, tirar dúvidas sobre conceitos
+    básicos de lógica de programação e Python, e ajudar na correção de 
+    listas de exercícios.
+    .
+    Requisitos
+    
+      - Ter sido aprovado(a) em CC101 com nota acima 8.5.
+      - Boa comunicação e proatividade.
+      - Disponibilidade de 2 horas semanais durante almoço.
+    .
+    --
+    [         Candidatar-se a esta Vaga       ]
+  }
+}
+@endsalt
+```
 
-### Tela Cadastrar torneio 3
-
-[![Prototipo 10]
-
-### Tela Cadastrar torneio 4
-
-[![Prototipo 11]
-
-### Tela com meus torneios
-
-[![Prototipo 12]
-
-### Tela de inscrição em torneio
-
-[![Prototipo 13]
-
-<p align = "justify">
-Na primeira versão do protótipo utilizamos a ferramenta <a href="https://material.io/resources/color/#!/?view.left=0&view.right=0">Material Design Color Tool</a>  para auxiliar na criação da paleta de cores do aplicativo, definimos as cores base do aplicativo mas as cores definidas para as telas 12 e 13 ainda não foram decididas.
-</p>
-
-### Versão 2.0
-
-### Tela Login
-
-[![Prototipo 1]
-
-### Tela Cadastro
-
-[![Prototipo 2]
-
-### Tela Esqueceu Senha
-
-[![Prototipo 3]
-
-### Tela Perfil
-
-[![Prototipo 4]
-
-### Tela do Feed
-
-[![Prototipo 5]
-
-### Tela Cadastrar em um torneio
-
-[![Prototipo 6]
-### Tela Cadastrar torneio
-
-[![Prototipo 7]
-
-### Tela Cadastrar torneio 2
-
-[![Prototipo 8]
-
-### Tela dos meus torneios
-
-[![Prototipo 9]
-
-### Tela das chaves do torneio
-
-[![Prototipo 10]
-
-### Tela das estatíscicas
-
-[![Prototipo 11]
-
-### Tela de adicionar resultado das partidas
-
-[![Prototipo 12]
-
-link para o `<a href="https://www.figma.com/file/karoCnQtvMXWHEwdMuhQs0/Prototipo?node-id=0%3A1">`Protótipo `</a>`
 
 ## Conclusão
 
 <p align = "justify">
-A partir da elaboração do protótipo foi possível ter uma noção inicial da interface do usuário, definindo fluxo, paleta de cores, botões, app bars e diversas outras funcionalidades
+A série de mockups de baixa fidelidade apresentada oferece uma base estrutural sólida para o desenvolvimento da plataforma Monitor CASA. Ao focar na disposição dos elementos, nas funcionalidades-chave e nos fluxos de interação para os perfis de aluno, professor e administrador, garantimos que os requisitos fundamentais do sistema foram mapeados de forma clara e lógica.
 </p>
 
 ## Referências
-
-> Material Design Color Tool. Disponível em:  https://material.io/resources/color/#!/?view.left=0&view.right=0
-
-> PMI. Um guia do conhecimento em gerenciamento de projetos. Guia PMBOK® 5a. ed. EUA: Project Management Institute, 2013.
-
-> Ferramenta Figma. Disponível em https://www.figma.com
-
-## Autor(es)
-
-| Data     | Versão | Descrição                            | Autor(es)                                                                            |
-| -------- | ------- | -------------------------------------- | ------------------------------------------------------------------------------------ |
-| 07/09/20 | 1.0     | Criação do documento                 | Lucas Alexandre e Matheus Estanislau                                                 |
-| 07/09/20 | 1.1     | Adicionado as imagens do protótipo    | Lucas Alexandre e Matheus Estanislau                                                 |
-| 07/09/20 | 1.2     | Adicionado conclusão e referências   | Lucas Alexandre e Matheus Estanislau                                                 |
-| 26/10/20 | 2.0     | Adicionada a versão 2.0 do protótipo | João Pedro, Lucas Alexandre, Matheus Estanislau, Moacir Mascarenha e Renan Cristyan |
+> Ferramenta PlantText. Disponível em https://www.planttext.com/
