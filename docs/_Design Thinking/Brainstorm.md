@@ -33,6 +33,10 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 <b>João</b> - O objetivo principal é desenvolver um portal que centralize a divulgação das vagas de monitoria, permitindo que os alunos possam visualizar e se candidatar de forma prática, enquanto os professores podem publicar e acompanhar as oportunidades.
 </p>
 
+<p align = "justify">
+<b>Matheus</b> - O objetivo é o desenvolvimento de um site que tenha um portal para centralizar a divulgação de vagas de mentoria, permitindo assim que os alunos possam se candidatar e os professores poderão publicar e acompanhar as oportunidades.
+</p>
+
 ---
 
 ### 2. Como será o processo para cadastrar um novo usuario?
@@ -49,6 +53,9 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 <b>João</b> - O processo de cadastro deverá ser integrado ao sistema acadêmico, de modo que alunos utilizem matrícula, CPF e nome para validação. Professores terão acesso especial para publicação de vagas, e administradores contarão com autenticação em dois fatores para garantir maior segurança.
 </p>
 
+<p align = "justify">
+<b>Matheus</b> - O processo de registro deve ser conectado ao sistema acadêmico, permitindo que os alunos utilizem matrícula, CPF e nome para autenticação. Os professores terão permissões específicas para criar e gerenciar vagas, enquanto os administradores contarão com uma autenticação em dois fatores para aumentar a segurança.
+</p>
 ---
 
 ### 3. Como será a forma de adicionar vagas de monitoria?
@@ -63,6 +70,11 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 
 <p align = "justify">
 <b>João</b> - O professor terá acesso a um painel no qual poderá criar vagas vinculadas às disciplinas que ministra. Essas vagas passarão por uma validação do administrador antes de serem publicadas no portal.
+</p>
+
+<p align = "justify">
+<b>Matheus</b> - O professor terá um painel exclusivo onde poderá criar vagas associadas às disciplinas que leciona. Antes de serem divulgadas no portal, essas vagas precisarão ser aprovadas pelo administrador.
+
 </p>
 
 ---
@@ -81,6 +93,10 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 <b>João</b> - Uma questão importante é como será definido o critério de desempate quando mais de um aluno atender aos requisitos. Além disso, é necessário considerar se haverá limite de monitorias simultâneas por aluno.
 </p>
 
+<p align = "justify">
+<b>Matheus</b> - Um ponto relevante a ser definido é o critério de desempate nos casos em que múltiplos alunos cumprirem os requisitos da vaga. Também é importante estabelecer se haverá um limite para o número de monitorias que cada aluno poderá exercer ao mesmo tempo.
+</p>
+
 ---
 
 ### 5. O que o administrador deveria ver no dashboard?
@@ -97,6 +113,11 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 <b>João</b> - O administrador deverá visualizar no dashboard todas as vagas cadastradas, status de candidaturas, relatórios de professores e alunos envolvidos, além de indicadores como quantidade de vagas ativas e preenchidas.
 </p>
 
+<p align = "justify">
+<b>Matheus</b> - O administrador contará com um dashboard completo, onde poderá visualizar todas as vagas cadastradas, o status das candidaturas, relatórios referentes a professores e alunos participantes, além de métricas como o número de vagas ativas, preenchidas e outros indicadores relevantes.
+
+</p>
+
 ---
 
 ### 6. Quais informações seriam interessante para o usuarios?
@@ -111,6 +132,10 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 
 <p align = "justify">
 <b>João</b> - Para os usuários, seria interessante visualizar prazos de candidatura, requisitos de cada vaga, status atualizado da inscrição e resultados do processo seletivo.
+</p>
+
+<p align = "justify">
+<b>Matheus</b> - Para os usuários, é importante disponibilizar informações como os prazos para candidatura, os requisitos específicos de cada vaga, o status atualizado da inscrição e os resultados do processo seletivo, garantindo maior transparência e acompanhamento em tempo real.
 </p>
 
 <b>WWWWs</b> - O usuário poderá ver scouts de partidas do torneio, ver as regras dos torneios, locais e data das partidas.
