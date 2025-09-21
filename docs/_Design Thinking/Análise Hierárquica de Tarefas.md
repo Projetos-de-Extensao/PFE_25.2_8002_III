@@ -61,7 +61,7 @@ Antes de detalhar as tarefas específicas de cada persona, existem ações unive
 | 2 | Preencher informações pessoais | 2.1 Digitar nome completo, email e senha<br>2.2 Selecionar perfil (Aluno, Professor ou Administrador) |
 | 3 | Confirmar cadastro | 3.1 Clicar em "Registrar"<br>3.2 Aguardar confirmação por email (se aplicável) |
 
-```plantuml
+```puml
 @startuml
 title Fluxograma - Criar Conta
 
@@ -95,7 +95,7 @@ stop
 | 2 | Autenticar usuário | 2.1 Clicar em "Entrar"<br>2.2 Aguardar validação das credenciais |
 | 3 | Entrar no sistema | 3.1 Redirecionamento para o painel correspondente ao perfil |
 
-```plantuml
+```puml
 @startuml
 title Fluxograma - Login
 
@@ -126,7 +126,21 @@ stop
 | Passo | Descrição | Ações |
 |-------|-----------|-------|
 | 1 | Buscar por vagas relevantes | 1.1 Digitar "Estrutura de Dados" na barra de busca<br>1.2 Clicar em "Filtrar" |
-| 2 | Verificar resultados da busca | 2.2 Visualizar lista de vagas disponíveis |
+| 2 | Verificar resultados da busca | 2.1 Visualizar lista de vagas disponíveis |
+
+```puml
+@startuml
+title Fluxograma - Encontrar uma vaga de monitoria
+
+start
+:Acessar plataforma;
+:Digitar "Estrutura de Dados" na barra de busca;
+:Clicar em "Filtrar";
+:Visualizar lista de vagas disponíveis;
+
+stop
+@enduml
+```
 
 ---
 
@@ -137,7 +151,23 @@ stop
 |-------|-----------|-------|
 | 1 | Selecionar vaga desejada | 1.1 Clicar em "Ver/Candidatar-se" |
 | 2 | Analisar detalhes da vaga | 2.1 Ler a descrição, requisitos e remuneração |
-| 3 | Enviar candidatura | 3.1 Clicar em "Candidatar-se a esta Vaga"<br>Confirmar envio |
+| 3 | Enviar candidatura | 3.1 Clicar em "Candidatar-se a esta Vaga"<br>3.2 Confirmar envio |
+
+```puml
+@startuml
+title Fluxograma - Candidatar-se a uma vaga de monitoria
+
+start
+:Acessar lista de vagas;
+:Clicar em "Ver/Candidatar-se" na vaga desejada;
+:Ler descrição, requisitos e remuneração;
+:Clicar em "Candidatar-se a esta Vaga";
+:Confirmar envio da candidatura;
+:Receber confirmação de candidatura enviada;
+
+stop
+@enduml
+```
 
 ---
 

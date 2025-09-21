@@ -65,6 +65,8 @@ plugins:
   - minify:
       minify_html: true
   - search
+  - plantuml:
+      puml_url: https://www.plantuml.com/plantuml/
 
 theme:
   features:

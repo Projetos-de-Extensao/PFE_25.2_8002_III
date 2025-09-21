@@ -142,36 +142,42 @@ Nós definimos estas 6 perguntas para a sessão de brainstorming. Depois, indivi
 
 ---
 
-### Requisitos elicitados
+## Requisitos elicitados
 
-|ID|Descrição|
-|----|-------------|
-|BS01| O cliente...|
-|BS02| O cliente...|
-|BS03| O cliente...|
-|BS04| O cliente...|
-|BS05| O cliente...|
-|BS06| O cliente...|
-|BS07| O cliente...|
-|BS08| O cliente...|
-|BS09| O cliente...|
-|BS10| O produto...|
-|BS11| O produto...|
-|BS12| O produto...|
-|BS13| O produto...|
-|BS14| O produto...|
-|BS15| O produto...|
+Após uma sessão de brainstorming, o grupo consolidou as ideias e definiu os seguintes requisitos essenciais para o desenvolvimento da plataforma Monitor CASA. Este documento serve como guia para o escopo do projeto, detalhando as funcionalidades necessárias e os critérios de qualidade esperados.
 
-## Conclusão
-<p align = "justify">
-Através da aplicação da técnica, foi possível elicitar alguns dos primeiros requisitos do projeto.
-</p>
+Os requisitos são divididos em duas categorias principais:
 
-## Referências Bibliográficas
+* **Requisitos Funcionais:** O que o sistema deve fazer. São as funcionalidades e ações que os usuários podem realizar.
+* **Requisitos Não Funcionais:** Como o sistema deve ser. São as características de qualidade, como segurança, usabilidade e desempenho.
 
-> BARBOSA, S. D. J; DA SILVA, B. S. Interação humano-computador. Elsevier, 2010.
+---
 
-## Autor(es)
-| Data | Versão | Descrição | Autor(es) |
-| -- | -- | -- | -- |
-| DD/MM/YYYY | 1.0 | Criação do documento | XXX XXXX, XXXX XXXX, YYY YYYY e ZZZ XXXX |
+### Requisitos Funcionais (RF)
+
+### RF - Módulo Geral (Todos os Usuários)
+* **RF01:** O sistema deve permitir que usuários se cadastrem e realizem login de forma segura para acessar a plataforma.
+* **RF02:** O sistema deve redirecionar o usuário para seu respectivo painel (dashboard) após o login bem-sucedido.
+
+### RF - Módulo do Aluno
+* **RF03:** O sistema deve permitir que o aluno visualize uma lista de vagas de monitoria disponíveis.
+* **RF04:** O sistema deve fornecer uma ferramenta de busca para que o aluno possa filtrar vagas por disciplina ou palavra-chave.
+* **RF05:** O sistema deve permitir que o aluno clique em uma vaga para ver seus detalhes (descrição, requisitos, remuneração).
+* **RF06:** O sistema deve permitir que o aluno se candidate a uma vaga de interesse.
+* **RF07:** O sistema deve possuir uma área onde o aluno possa acompanhar o status de todas as suas candidaturas.
+
+### RF - Módulo do Professor
+* **RF08:** O sistema deve permitir que o professor crie e publique novas vagas de monitoria.
+* **RF09:** O sistema deve fornecer um formulário para o professor preencher os detalhes da vaga (título, disciplina, descrição).
+* **RF10:** O sistema deve permitir que o professor visualize a lista de candidatos inscritos em uma vaga e selecione um deles para preenchê-la.
+
+### RF - Módulo do Administrador
+* **RF11:** O sistema deve apresentar um painel de controle (dashboard) para o administrador com estatísticas gerais da plataforma.
+
+---
+
+### Requisitos Não Funcionais (RNF)
+
+* **RNF01 (Usabilidade):** A interface do sistema deve ser intuitiva, clara e de fácil utilização para todos os perfis de usuário, minimizando a necessidade de treinamento.
+* **RNF02 (Desempenho):** As páginas e as respostas a ações do usuário (como buscas e filtros) devem carregar em um tempo aceitável.
+* **RNF03 (Compatibilidade):** O sistema deve ser compatível com os principais navegadores web do mercado (Google Chrome, Mozilla Firefox, Microsoft Edge, Safari).
