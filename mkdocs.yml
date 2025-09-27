@@ -1,7 +1,7 @@
 ---
 repo_url: https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III
 site_author: João Márcio Prado Silva, Nicholas Borges de Vasconcelos, Victor Robson, Matheus pinguim
-site_name: PFE_25.2_8002_III
+site_name: Grupo III - Projeto Portal Monitor
 site_url: https://projetos-de-extensao.github.io/PFE_25.2_8002_III/
 copyright: Copyright ©️ 2025, João Márcio Prado Silva, Nicholas Borges de Vasconcelos, Victor Robson, Matheus pinguim / 2025, João Márcio Prado Silva, Nicholas Borges de Vasconcelos, Victor Robson, Matheus pinguim
 docs_dir: docs
@@ -95,24 +95,21 @@ theme:
     favicon: simple/react
   name: material
   palette:
-    - media: "(prefers-color-scheme)"
+    # Palette toggle for light mode
+    - scheme: default
+      primary: green   # Base color, will be overridden by extra.css
+      accent: amber    # Base color, will be overridden by extra.css
       toggle:
-        icon: material/link
-        name: Switch to light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: deep orange
-      accent: amber
-      toggle:
-        icon: material/toggle-switch
+        icon: material/weather-sunny
         name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: indigo
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: green   # Base color, will be overridden by extra.css
+      accent: amber    # Base color, will be overridden by extra.css
       toggle:
-        icon: material/toggle-switch-off
-        name: Switch to system preference
+        icon: material/weather-night
+        name: Switch to light mode
 
 #nav: 
  # - Home: index.md

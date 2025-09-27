@@ -1,0 +1,37 @@
+/* docs/css/extra.css */
+
+/* --- Custom Light Theme --- */
+/* This applies when the "default" (light) scheme is active */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #0A3822; /* Dark Green: Header background */
+  --md-primary-fg-color--light: #1A5231;
+  
+  --md-accent-fg-color: #C9A748; /* Mustard Yellow: Links, highlights, accents */
+
+  --md-default-fg-color: #0A3822; /* Dark Green: Main text color for readability */
+  --md-default-bg-color: #fcfaf6; /* A very light beige for the page background */
+
+  --md-code-fg-color: #B99B46; /* Antique Gold: Code text color */
+  --md-code-bg-color: #E5D4B7; /* Light Beige: Code block background */
+  
+  --md-admonition-bg-color: #E5D4B7; /* Light Beige: Note/Warning box background */
+  --md-admonition-fg-color: #0A3822; /* Dark Green: Note/Warning box text */
+}
+
+/* --- Custom Dark Theme --- */
+/* This applies when the "slate" (dark) scheme is active */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1A5231; /* Sage Green: Header background */
+  --md-primary-fg-color--light: #6C7A89;
+
+  --md-accent-fg-color: #B99B46; /* Antique Gold: Links, highlights, accents */
+  
+  --md-default-fg-color: #E5D4B7; /* Light Beige: Main text color */
+  --md-default-bg-color: #0d1117; /* Dark Green: Page background */
+
+  --md-code-fg-color: #E5D4B7; /* Light Beige: Code text color */
+  --md-code-bg-color: #1A5231; /* Sage Green: Code block background */
+  
+  --md-admonition-bg-color: #1A5231; /* Sage Green: Note/Warning box background */
+  --md-admonition-fg-color: #E5D4B7; /* Light Beige: Note/Warning box text */
+}
