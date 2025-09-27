@@ -19,9 +19,9 @@ Para a criação destes diagramas de interface, foi utilizada a ferramenta onlin
 ### Tela Login
 A página de entrada para todos os usuários.
 
-![Tela Login UML](../assets/Baixa_Fidelidade/UML_Tela_Login.png)
 
-```
+
+```puml
 @startsalt
 {
   title "Monitor CASA - Entrar"
@@ -42,9 +42,7 @@ A página de entrada para todos os usuários.
 ### Tela Painel do Aluno
 A visão principal para o aluno encontrar e se candidatar às vagas de monitoria.
 
-![Tela Painel Aluno UML](../assets/Baixa_Fidelidade/UML_Tela_Aluno.png)
-
-```
+```puml
 @startsalt
 {
   title "Painel do Aluno"
@@ -86,9 +84,8 @@ A visão principal para o aluno encontrar e se candidatar às vagas de monitoria
 ### Tela Painel do Professor
 A tela para professores gerenciarem suas vagas e visualizarem os candidatos.
 
-![Tela Painel Professor UML](../assets/Baixa_Fidelidade/UML_Tela_Professor.png)
 
-```
+```puml
 @startsalt
 {
   title "Painel do Professor"
@@ -117,9 +114,9 @@ A tela para professores gerenciarem suas vagas e visualizarem os candidatos.
 
 ### Tela Painel do Admin
 A visão geral para administradores, com estatísticas e ferramentas de gerenciamento de usuários.
-![Tela Painel Professor UML](../assets/Baixa_Fidelidade/UML_Tela_Admin.png)
 
-```
+
+```puml
 @startsalt
 {
   title "Painel do Administrador"
@@ -155,9 +152,7 @@ A visão geral para administradores, com estatísticas e ferramentas de gerencia
 ### Tela de Detalhes da Vaga
 Esta página fornece todas as informações sobre uma vaga específica e permite que o aluno inicie o processo de candidatura.
 
-![Tela Painel Professor UML](../assets/Baixa_Fidelidade/UML_Tela_Detalhes_Vaga.png)
-
-```
+```puml
 @startsalt
 {
   title "Detalhes da Vaga"

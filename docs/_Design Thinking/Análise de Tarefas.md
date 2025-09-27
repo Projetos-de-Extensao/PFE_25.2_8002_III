@@ -1,4 +1,4 @@
-# Análise Hierárquica de Tarefas - Monitor CASA
+# Análise de Tarefas
 
 
 ## 0. Introduction
@@ -59,7 +59,7 @@ Antes de detalhar as tarefas específicas de cada persona, existem ações unive
 |-------|-----------|-------|
 | 1 | Acessar página de cadastro | 1.1 Clicar em "Criar Conta" na tela inicial |
 | 2 | Preencher informações pessoais | 2.1 Digitar nome completo, email e senha<br>2.2 Selecionar perfil (Aluno, Professor ou Administrador) |
-| 3 | Confirmar cadastro | 3.1 Clicar em "Registrar"<br>3.2 Aguardar confirmação por email (se aplicável) |
+| 3 | Confirmar cadastro | 3.1 Clicar em "Registrar"<br> |
 
 ```puml
 @startuml
@@ -68,17 +68,19 @@ title Fluxograma - Criar Conta
 start
 :Acessar página de cadastro;
 :Clicar em "Criar Conta";
-:Preencher nome, email e senha;
-:Selecionar perfil (Aluno / Professor / Administrador);
 
-if (Dados corretos?) then (Sim)
-  :Clicar em "Registrar";
-  :Receber confirmação por email (se aplicável);
-  :Conta criada com sucesso;
-else (Não)
-  :Exibir mensagem de erro;
-  :Solicitar correção dos dados;
-endif
+while (Dados corretos?) is (Não)
+  :Preencher nome, email e senha;
+  :Selecionar perfil (Aluno / Professor / Administrador);
+  if (Dados corretos?) then (Não)
+    :Exibir mensagem de erro;
+    :Solicitar correção dos dados;
+  endif
+endwhile (Sim)
+
+:Clicar em "Registrar";
+:Receber confirmação por email (se aplicável);
+:Conta criada com sucesso;
 
 stop
 @enduml
