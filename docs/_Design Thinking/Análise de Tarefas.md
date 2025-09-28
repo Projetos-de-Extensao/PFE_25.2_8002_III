@@ -9,25 +9,94 @@ O objetivo é decompor os objetivos gerais dos usuários em tarefas e ações es
 
 ## 1. Personas
 
-Para guiar o desenvolvimento, definimos três personas principais que representam os grupos de usuários da plataforma.
+Para guiar o desenvolvimento, definimos seis personas principais que representam os grupos de usuários da plataforma.
 
-### Aluno: Name
+### Aluno: Lucas
 - **Perfil**: Estudante 
-- **Descrição**: Como ele vai usar o systema
-- **Necessidades**: 
+- **Idade**: 20
+- **Curso**: Engenharia da Computação
+- **Período**: 4º
+- **CR**: 9.7
 - **Objetivos**: 
+ - Encontrar todas as vagas de monitoria em um só lugar. 
+ - Entender claramente os pré-requisitos e o CR mínimo.
+ - Acompanhar o status da sua candidatura (recebida, em análise, aprovada).
+- **Frustações**: 
+ - Fica sabendo das vagas por amigos quando o prazo já está acabando.
+ - Não sabe se o professor sequer recebeu seu e-mail de candidatura.
+ - Sente que o processo é "quem indica".
 
-### Professora: Name
+### Aluno: Mariana
+- **Perfil**: Estudante 
+- **Idade**: 21
+- **Curso**: Engenharia de Produção
+- **Período**: 6º
+- **CR**: 8.7
+- **Objetivos**: 
+ - Conseguir uma bolsa de monitoria para complementar sua renda. 
+ - Encontrar vagas que se encaixem em sua grade horária apertada.
+ - Ter clareza sobre os prazos de inscrição, seleção e, principalmente, de pagamento.
+- **Frustações**: 
+ - Processos de seleção que demoram semanas para dar um retorno.
+ - Falta de informação centralizada sobre o valor da bolsa e as datas de pagamento.
+ - Professores que não respondem e deixam os candidatos "no vácuo".
+
+### Aluno: Pedro
+- **Perfil**: Estudante 
+- **Idade**: 19
+- **Curso**: Ciência da Computação
+- **Período**: 2º
+- **CR**: 7.5
+- **Objetivos**: 
+ - Aprofundar seu conhecimento em uma matéria que ele gosta.
+ - Ganhar confiança e provar para si mesmo e para os outros sua capacidade.
+ - Encontrar vagas onde outros fatores além do CR sejam valorizados (ex: uma pequena prova ou entrevista).
+- **Frustações**: 
+ - Ser descartado automaticamente de processos seletivos por causa do seu CR.
+ - Achar que as vagas são sempre preenchidas pelos "gênios" da turma.
+ - Não ter um espaço para destacar suas outras qualidades (proatividade, boa didática, etc.).
+
+
+### Professora: Daniele
+- **Perfil**: Professor 
+- **Idade**: 45
+- **Curso**: Coordenadora do Ciclo Básico de Engenharia
+- **Objetivos**:
+ - Publicar uma vaga de forma rápida e simples.
+ - Visualizar todos os candidatos em uma única tela, já ordenados por CR. 
+ - Acessar o histórico escolar e contato dos alunos facilmente.
+- **Frustações**:
+ - Sua caixa de e-mails fica lotada com candidaturas com títulos diferentes.
+ - Precisa pedir o histórico de cada aluno individualmente.
+ - Gasta mais de uma semana para conseguir selecionar alguém.
+
+### Professor: Tiago
 - **Perfil**: Professor  
-- **Descrição**: Como ele vai usar o systema
-- **Necessidades**: 
-- **Objetivos**: 
+- **Idade**: 57
+- **Cargo**: Coordenadora do Ciclo Básico de Engenharia
+- **Objetivos**:
+ - Encontrar um aluno empolgado e curioso para colaborar na disciplina.
+ - Otimizar a seleção para focar em candidatos com perfil de "mentor"/"auxiliar do professor", não apenas "melhor nota".
+ - Criar um relacionamento de mentoria que possa evoluir para uma iniciação científica.
+- **Frustações**:
+ - Sistemas que só permitem filtrar por CR, escondendo candidatos com outras qualidades.
+ - A burocracia da universidade para formalizar a contratação do monitor.
+ - Não conseguir "vender" sua vaga de monitoria de forma atrativa para os melhores alunos.
 
-### Administrador: Name
+### Administrador: Sandra
 - **Perfil**: Administrador CASA  
-- **Descrição**: Como ele vai usar o systema
-- **Necessidades**: 
-- **Objetivos**: 
+- **Idade**: 65
+- **Cargo**: Chefe da Secretaria Acadêmica de Graduação.
+- **Objetivos**:
+ - Ter uma visão geral de todas as monitorias ativas em tempo real.
+ - Exportar relatórios (ex: vagas por departamento, número de candidatos, etc.).
+ - Gerenciar permissões de usuários (cadastrar novos professores, resetar senhas, etc.).
+ - Garantir que as regras do programa de monitoria (ex: CR mínimo geral, limite de horas) estão sendo cumpridas.
+- **Frustações**:
+ - Ter que cobrar informações de cada professor por e-mail para montar relatórios.
+ - Processos manuais que são suscetíveis a erros e fraudes.
+ - Não ter como auditar ou rastrear as decisões de seleção dos professores.
+ - Perder muito tempo com tarefas operacionais, como resolver problemas de acesso dos usuários.
 
 ---
 
