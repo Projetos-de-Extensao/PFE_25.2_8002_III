@@ -4,7 +4,7 @@
 | Matrícula    | Aluno                       |
 |--------------|-----------------------------|
 | 202407138829 | Nicholas Borges de Vasconcelos |
-| 000000000000 | João Márcio Prado Silva     |
+| 202208385001 | João Márcio Prado Silva     |
 | 202503798371 | Victor Robson               |
 | 202508486083 | Matheus Oliveira            |
 
