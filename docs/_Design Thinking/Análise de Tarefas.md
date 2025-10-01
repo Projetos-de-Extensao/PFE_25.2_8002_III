@@ -57,10 +57,10 @@ Para guiar o desenvolvimento, definimos seis personas principais que representam
     - Não ter um espaço para destacar suas outras qualidades (proatividade, boa didática, etc.).
 
 
-### Professora: Daniele
-- **Perfil**: Professor 
+### Professora: Danielly
+- **Perfil**: Professor
 - **Idade**: 45
-- **Curso**: Coordenadora do Ciclo Básico de Engenharia
+- **Cargo**: Coordenadora do Ciclo Básico de Engenharia
 - **Objetivos**:
     - Publicar uma vaga de forma rápida e simples.
     - Visualizar todos os candidatos em uma única tela, já ordenados por CR. 
@@ -70,10 +70,10 @@ Para guiar o desenvolvimento, definimos seis personas principais que representam
     - Precisa pedir o histórico de cada aluno individualmente.
     - Gasta mais de uma semana para conseguir selecionar alguém.
 
-### Professor: Tiago
+### Professor: Thyago
 - **Perfil**: Professor  
 - **Idade**: 57
-- **Cargo**: Coordenadora do Ciclo Básico de Engenharia
+- **Cargo**: Coordenador Geral de Engenharia
 - **Objetivos**:
     - Encontrar um aluno empolgado e curioso para colaborar na disciplina.
     - Otimizar a seleção para focar em candidatos com perfil de "mentor"/"auxiliar do professor", não apenas "melhor nota".
@@ -83,7 +83,7 @@ Para guiar o desenvolvimento, definimos seis personas principais que representam
     - A burocracia da universidade para formalizar a contratação do monitor.
     - Não conseguir "vender" sua vaga de monitoria de forma atrativa para os melhores alunos.
 
-### Administrador: Sandra
+### Administradora: Sandra
 - **Perfil**: Administrador CASA  
 - **Idade**: 65
 - **Cargo**: Chefe da Secretaria Acadêmica de Graduação.
