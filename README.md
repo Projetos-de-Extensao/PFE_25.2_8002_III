@@ -28,11 +28,11 @@ Este projeto foi construído com foco total no **front-end**, utilizando a bibli
 - Painel pessoal para acompanhar o status de todas as candidaturas.
 
 #### Para Professores
-- Formulário para criação e publicação de novas vagas de monitoria.
 - Painel para visualizar e gerenciar os alunos inscritos em cada vaga.
 - Funcionalidade para selecionar o candidato ideal para preencher a vaga.
 
 #### Para Administradores (CASA)
+- Formulário para criação e publicação de novas vagas de monitoria.
 - Dashboard com visão geral e estatísticas da plataforma (ex: número de monitores por curso, vagas preenchidas vs. abertas).
 
 ## Tecnologias Utilizadas
@@ -58,12 +58,12 @@ Siga os passos abaixo:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+    git clone [https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III](https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III)
     ```
 
 2.  **Navegue até o diretório do projeto:**
     ```bash
-    cd nome-do-repositorio
+    cd PFE_25.2_8002_III
     ```
 
 3.  **Instale as dependências:**
@@ -76,3 +76,4 @@ Siga os passos abaixo:
     npm start
     ```
 A aplicação será aberta automaticamente em seu navegador no endereço `http://localhost:3000`.
+(Etapa 3 e 4 ainda não foi implementado.)
