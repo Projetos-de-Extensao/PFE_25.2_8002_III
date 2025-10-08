@@ -3,35 +3,72 @@
 /* --- Custom Light Theme --- */
 /* This applies when the "default" (light) scheme is active */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color: #0A3822; /* Dark Green: Header background */
-  --md-primary-fg-color--light: #1A5231;
+  --md-primary-fg-color: #1A3B6E; /* Dark Blue: Header background */
+  --md-primary-fg-color--light: #2A5A9D; /* Slightly lighter blue for subtle variations */
   
-  --md-accent-fg-color: #C9A748; /* Mustard Yellow: Links, highlights, accents */
+  --md-accent-fg-color: #F2B705; /* Gold/Yellow: Links, highlights, accents */
 
-  --md-default-fg-color: #0A3822; /* Dark Green: Main text color for readability */
-  --md-default-bg-color: #fcfaf6; /* A very light beige for the page background */
+  --md-default-fg-color: #333333; /* Dark Gray: Main text color for readability */
+  --md-default-bg-color: #FCF8ED; /* Off-White: A very light, warm off-white for the page background */
 
-  --md-code-fg-color: #B99B46; /* Antique Gold: Code text color */
-  --md-code-bg-color: #E5D4B7; /* Light Beige: Code block background */
+  --md-code-fg-color: #1A3B6E; /* Dark Blue: Code text color */
+  --md-code-bg-color: #E0E6ED; /* Light Blue/Gray: Code block background */
   
-  --md-admonition-bg-color: #E5D4B7; /* Light Beige: Note/Warning box background */
-  --md-admonition-fg-color: #0A3822; /* Dark Green: Note/Warning box text */
+  /* --- Admonition (Warning Box) Customization --- */
+  --md-admonition-bg-color: #E0E6ED; /* Light Blue/Gray - for admonition background */
+  --md-admonition-fg-color: #1A3B6E; /* Dark Blue text for contrast */
 }
 
 /* --- Custom Dark Theme --- */
 /* This applies when the "slate" (dark) scheme is active */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color: #1A5231; /* Sage Green: Header background */
-  --md-primary-fg-color--light: #6C7A89;
+  --md-primary-fg-color: #1A3B6E; /* Dark Blue: Header background */
+  --md-primary-fg-color--light: #AABBDD; /* Light Blue/Gray for subtle variations */
 
-  --md-accent-fg-color: #B99B46; /* Antique Gold: Links, highlights, accents */
+  --md-accent-fg-color: #F2B705; /* Gold/Yellow: Links, highlights, accents */
   
-  --md-default-fg-color: #E5D4B7; /* Light Beige: Main text color */
-  --md-default-bg-color: #0d1117; /* Dark Green: Page background */
+  --md-default-fg-color: #FCF8ED; /* Off-White: Main text color */
+  --md-default-bg-color: #0d1117; /* Very Dark Gray/Black: Page background (keeping similar to your original dark theme base) */
 
-  --md-code-fg-color: #E5D4B7; /* Light Beige: Code text color */
-  --md-code-bg-color: #1A5231; /* Sage Green: Code block background */
+  --md-code-fg-color: #FCF8ED; /* Off-White: Code text color */
+  --md-code-bg-color: #1A3B6E; /* Dark Blue: Code block background */
   
-  --md-admonition-bg-color: #1A5231; /* Sage Green: Note/Warning box background */
-  --md-admonition-fg-color: #E5D4B7; /* Light Beige: Note/Warning box text */
+  /* --- Admonition (Warning Box) Customization --- */
+  --md-admonition-bg-color: #AABBDD; /* Light Blue/Gray - for admonition background */
+  --md-admonition-fg-color: #1A3B6E; /* Dark Blue text for contrast */
+}
+
+/* --- Card Grid Customization (for both themes) --- */
+.md-card {
+  background-color: #1A3B6E !important; /* Dark Blue - Color from logo */
+  color: #FCF8ED !important;              /* Off-White text for contrast */
+  border: 2px solid #F2B705;              /* Gold/Yellow border */
+  border-radius: 8px;                     /* Rounded corners */
+}
+/* Ensure links inside the card are also light and visible */
+.md-card a {
+  color: #FCF8ED !important; /* Off-white for card links */
+}
+/* Change link color on hover to the accent color */
+.md-card a:hover {
+  color: #F2B705 !important; /* Gold/Yellow on hover */
+}
+
+/* --- Table Customization (to match cards) --- */
+.md-typeset table {
+  background-color: #1A3B6E; /* Dark Blue background */
+  border: 2px solid #F2B705; /* Gold/Yellow border */
+  border-radius: 8px;           /* Rounded corners */
+  border-spacing: 0;
+  overflow: hidden;             /* Ensures content fits within rounded corners */
+}
+.md-typeset th {
+  color: #FCF8ED;           /* Off-White text for headers */
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.2); /* Slightly darker header background */
+  border-bottom: 2px solid #F2B705;     /* Gold/Yellow line below header */
+}
+.md-typeset td {
+  color: #FCF8ED;           /* Off-White text for cells */
+  border-top: 1px solid rgba(242, 183, 5, 0.3); /* Subtle gold line between rows */
 }

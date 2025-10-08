@@ -7,7 +7,7 @@ hide:
 
 ### Grupos
 
-<div class="grid cards" style="background-color: #1A5231; color: #E5D4B7; border: 2px solid #ff9100; border-radius: 4px;" markdown>
+<div class="grid cards" style="background-color: #1A3B6E; color: #FCF8ED; border: 2px solid #F2B705; border-radius: 8px;" markdown>
 
 -   :material-github:{ .lg .right } __PFE_25.2_8002_III__
 
@@ -19,7 +19,7 @@ hide:
 
 </div>
 
-<div class="grid cards" style="background-color: #1A5231; color: #E5D4B7; border: 2px solid #ff9100; border-radius: 4px;" markdown>
+<div class="grid cards" style="background-color: #1A3B6E; color: #FCF8ED; border: 2px solid #F2B705; border-radius: 8px;" markdown>
 
 -   __Sobre o Projeto__
 
