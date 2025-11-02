@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Vaga - Portal Monitor</title>
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega a fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .input-bg {
+            background-color: #2c3346;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-100">
+
+    <div class="flex flex-col items-center justify-center min-h-screen p-4">
+        
+        <!-- Card de Criar Vaga -->
+        <div class="bg-slate-700 w-full max-w-2xl p-8 sm:p-10 rounded-lg shadow-2xl my-8">
+            
+            <!-- Cabeçalho -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-white mb-2">Portal Monitor</h1>
+                <p class="text-gray-300">Criar Nova Vaga</p>
+            </div>
+
+            <!-- Formulário -->
+            <form action="#" method="POST" class="space-y-6">
+                
+                <!-- Título da Vaga -->
+                <div>
+                    <label for="titulo-vaga" class="block text-sm font-medium text-gray-300 mb-2">Título da Vaga</label>
+                    <input 
+                        type="text" 
+                        name="titulo-vaga" 
+                        id="titulo-vaga"
+                        class="w-full h-11 input-bg text-gray-100 border-0 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                        placeholder="Ex: Monitor de Cálculo I"
+                        required
+                    >
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                    
+                    
+                    <div class="md:col-span-2">
+                        <label for="disciplina" class="block text-sm font-medium text-gray-300 mb-2">Disciplina</label>
+                        <input 
+                            type="text" 
+                            name="disciplina" 
+                            id="disciplina"
+                            class="w-full h-11 input-bg text-gray-100 border-0 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                            placeholder="Ex: Cálculo I"
+                            required
+                        >
+                    </div>
+                    
+                    
+                    <div class="md:col-span-3">
+                        <label for="professor" class="block text-sm font-medium text-gray-300 mb-2">Professor Responsável</label>
+                        <select 
+                            id="professor" 
+                            name="professor"
+                            class="w-full h-11 input-bg text-gray-100 border-0 rounded-md px-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                        >
+                            <option style="color: #D1D5DB;" value="">Selecione um professor</option>
+                            <option value="prof1">Dr. Arnaldo Silva</option>
+                            <option value="prof2">Dra. Beatriz Costa</option>
+                            <option value="prof3">Dr. Carlos Mendes</option>
+                        </select>
+                    </div>
+                </div>
+
+                
+                <div>
+                    <label for="descricao" class="block text-sm font-medium text-gray-300 mb-2">Descrição</label>
+                    <textarea 
+                        id="descricao" 
+                        name="descricao" 
+                        rows="4"
+                        class="w-full input-bg text-gray-100 border-0 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                        placeholder="Descreva as atividades principais do monitor..."
+                    ></textarea>
+                </div>
+
+                
+                <div>
+                    <label for="requisitos" class="block text-sm font-medium text-gray-300 mb-2">Requisitos</label>
+                    <textarea 
+                        id="requisitos" 
+                        name="requisitos" 
+                        rows="4"
+                        class="w-full input-bg text-gray-100 border-0 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                        placeholder="Liste os requisitos (ex: Ter sido aprovado em Cálculo I com nota A, Conhecimento em Python, etc.)"
+                    ></textarea>
+                </div>
+
+                
+                <div class="flex justify-end space-x-4 pt-4">
+                    <a href="LoginPage.html"
+                        class="bg-gray-600 text-gray-100 font-medium py-2 px-5 rounded-md hover:bg-gray-500 transition-colors duration-300"
+                    >
+                        Voltar
+                    </a>
+                    <button 
+                        type="submit"
+                        class="bg-yellow-400 text-gray-900 font-bold py-2 px-5 rounded-md hover:bg-yellow-300 transition-colors duration-300"
+                    >
+                        Publicar Vaga
+                    </button>
+                </div>
+            </form>
+
+        </div>
+
+        
+        <footer class="text-center text-gray-500 my-8">
+            © 2025 Portal Monitor. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
+

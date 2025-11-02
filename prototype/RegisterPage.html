@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Portal Monitor</title>
+    <!-- Carrega o Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carrega a fonte Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define a fonte Inter como padrão */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Cor de fundo personalizada para os inputs */
+        .input-bg {
+            background-color: #2c3346;
+        }
+        /* Estilização customizada para radio buttons */
+        .custom-radio {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 2px solid #6b7280; /* gray-500 */
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        .custom-radio:checked {
+            border-color: #facc15; /* yellow-400 */
+        }
+        .custom-radio:checked::after {
+            content: '';
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background: #facc15; /* yellow-400 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-100">
+
+    <div class="flex flex-col items-center justify-center min-h-screen p-4">
+        
+        <!-- Card de Cadastro -->
+        <div class="bg-slate-700 w-full max-w-md p-8 sm:p-10 rounded-lg shadow-2xl my-8">
+            
+            <!-- Cabeçalho -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-white mb-2">Portal Monitor</h1>
+                <p class="text-gray-300">Crie sua conta</p>
+            </div>
+
+            <!-- Formulário -->
+            <form action="#" method="POST" class="space-y-5">
+                
+                <!-- Campo de Nome -->
+                <div>
+                    <label for="nome" class="block text-sm font-medium text-gray-300 mb-2">Nome Completo</label>
+                    <div class="relative">
+                        <!-- Ícone de Usuário -->
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <input type="text" name="nome" id="nome" class="w-full input-bg text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" placeholder="Seu nome" required>
+                    </div>
+                </div>
+
+                <!-- Campo de Email -->
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                    <div class="relative">
+                        <!-- Ícone de Email -->
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.161V6a2 2 0 00-2-2H3z" />
+                                <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                            </svg>
+                        </div>
+                        <input type="email" name="email" id="email" class="w-full input-bg text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" placeholder="seu.email@dominio.com" required>
+                    </div>
+                </div>
+
+                <!-- Campo de Senha -->
+                <div>
+                    <label for="senha" class="block text-sm font-medium text-gray-300 mb-2">Senha</label>
+                    <div class="relative">
+                        <!-- Ícone de Cadeado -->
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <input type="password" name="senha" id="senha" class="w-full input-bg text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" placeholder="Crie uma senha forte" required>
+                    </div>
+                </div>
+
+                <!-- Campo de Confirmar Senha -->
+                <div>
+                    <label for="confirm-senha" class="block text-sm font-medium text-gray-300 mb-2">Confirmar Senha</label>
+                    <div class="relative">
+                        <!-- Ícone de Cadeado -->
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                             <svg class="w-5 h-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <input type="password" name="confirm-senha" id="confirm-senha" class="w-full input-bg text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" placeholder="Repita sua senha" required>
+                    </div>
+                </div>
+
+                <!-- Seletor de Tipo de Usuário -->
+                <div>
+                    <span class="block text-sm font-medium text-gray-300 mb-2">Tipo de Usuário</span>
+                    <div class="flex items-center space-x-6">
+                        <label for="tipo-aluno" class="flex items-center text-gray-200 cursor-pointer">
+                            <input type="radio" id="tipo-aluno" name="tipo-usuario" value="aluno" class="custom-radio" checked>
+                            Aluno
+                        </label>
+                        <label for="tipo-professor" class="flex items-center text-gray-200 cursor-pointer">
+                            <input type="radio" id="tipo-professor" name="tipo-usuario" value="professor" class="custom-radio">
+                            Professor
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Botão de Cadastrar -->
+                <div class="pt-2">
+                    <button 
+                        type="submit"
+                        class="w-full bg-yellow-400 text-gray-900 font-bold p-3 rounded-md hover:bg-yellow-300 transition-colors duration-300"
+                    >
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+
+            <!-- Link de Login -->
+            <div class="text-center mt-6">
+                <p class="text-sm text-gray-300">
+                    Já tem conta?
+                    <a href="LoginPage.html" class="font-medium text-blue-400 hover:text-blue-300">
+                        Faça login
+                    </a>
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 my-8">
+            © 2025 Portal Monitor. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
