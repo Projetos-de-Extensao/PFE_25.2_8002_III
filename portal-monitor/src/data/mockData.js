@@ -32,6 +32,15 @@ export const mockVagas = [
     descricao: 'Durante o horário de almoço, realize uma sessão de ajuda/estudo duas vezes por semana para auxiliar os alunos com as tarefas da disciplina e responder a quaisquer perguntas.',
     tags: ['Matemática', 'Teoria', 'Provas']
   }
+  ,
+  {
+    id: 'v5',
+    titulo: 'Monitor de Cálculo I',
+    curso: 'Engenharia',
+    professor: 'Dr. Fernandes',
+    descricao: 'Auxílio em exercícios e revisão de conteúdos fundamentais de Cálculo I, com sessões semanais e plantões de dúvidas.',
+    tags: ['Cálculo', 'Derivadas', 'Integrais']
+  }
 ]
 
 export const mockApplications = [
@@ -39,6 +48,15 @@ export const mockApplications = [
   { id: 'a2', vagaId: 'v2', vaga: 'Monitor de Banco de Dados', status: 'Aceito', professor: 'Profa. Almeida' },
   { id: 'a3', vagaId: 'v3', vaga: 'Monitor de Front-end', status: 'Rejeitado', professor: 'Prof. Costa' },
   { id: 'a4', vagaId: 'v3', vaga: 'Monitor de Front-end', status: 'Em Análise', professor: 'Prof. Costa' }
+]
+
+// Mock applicants per vaga for professor views
+export const mockApplicants = [
+  { id: 'ap1', vagaId: 'v1', nome: 'João Silva', curso: 'Ciência da Computação', email: 'joao.silva@example.com', grade: 9.2, descricao: 'Já auxiliei colegas em listas e tenho facilidade em explicar conceitos.', selected: false, relatorio: '' },
+  { id: 'ap2', vagaId: 'v1', nome: 'Mariana Souza', curso: 'Ciência da Computação', email: 'mariana.souza@example.com', grade: 8.7, descricao: 'Participei de projetos de extensão e tenho disponibilidade no horário solicitado.', selected: true, relatorio: 'Atuou como monitor na disciplina no semestre anterior com desempenho satisfatório.' },
+  { id: 'ap3', vagaId: 'v2', nome: 'Pedro Santos', curso: 'Sistemas de Informação', email: 'pedro.santos@example.com', grade: 5.5, descricao: 'Tenho experiência prática em bancos de dados e gosto de ensinar.', selected: false, relatorio: '' },
+  { id: 'ap4', vagaId: 'v3', nome: 'Ana Pereira', curso: 'Design e Web', email: 'ana.pereira@example.com', grade: 9.0, descricao: 'Criei materiais didáticos para aulas práticas.', selected: false, relatorio: '' },
+  { id: 'ap5', vagaId: 'v3', nome: 'Lucas Almeida', curso: 'Design e Web', email: 'lucas.almeida@example.com', grade: 8.0, descricao: 'Tenho interesse em orientação e revisão de exercícios.', selected: false, relatorio: '' }
 ]
 
 export default { mockVagas, mockApplications }

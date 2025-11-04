@@ -1,13 +1,15 @@
 import React from 'react'
 import { mockApplications } from '../data/mockData'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import PageContainer from '../components/PageContainer'
 
 function statusBadge(status){
   const base = 'inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold '
-  if(status === 'Aceito') return base + 'bg-green-500 text-white'
-  if(status === 'Rejeitado') return base + 'bg-red-500 text-white'
-  if(status === 'Em Análise') return base + 'bg-yellow-400 text-black'
-  return base + 'bg-slate-600 text-gray-100'
+  // Use black semi-bold text for all status pills per design request
+  if(status === 'Aceito') return base + 'bg-green-500 text-black'
+  if(status === 'Rejeitado') return base + 'bg-red-500 text-black'
+  if(status === 'Em Análise') return base + 'bg-orange-400 text-black'
+  return base + 'bg-slate-600 text-black'
 }
 
 export default function MyApplicationsPage(){
@@ -28,8 +30,9 @@ export default function MyApplicationsPage(){
   }
 
   return (
-    <div className="w-full max-w-4xl px-4">
-      <div className="bg-slate-700 rounded-lg p-8 shadow-lg">
+    <PageContainer>
+      <div className="w-full max-w-4xl mx-auto">
+        <div className="bg-slate-700 rounded-lg p-8 shadow-lg">
         <h1 className="text-2xl font-bold text-white mb-4">Minhas Candidaturas</h1>
 
         <div className="mb-4 text-sm text-gray-300 flex items-center gap-4">
@@ -71,7 +74,8 @@ export default function MyApplicationsPage(){
         <div className="mt-6 flex items-center gap-3">
           <Link to="/dashboard" className="bg-slate-600 text-gray-200 px-4 py-2 rounded-md">Voltar ao Dashboard</Link>
         </div>
+        </div>
       </div>
-    </div>
+    </PageContainer>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import PageContainer from '../components/PageContainer'
 
 export default function Register(){
   const [nome, setNome] = useState('')
@@ -29,8 +30,9 @@ export default function Register(){
   }
 
   return (
-    <div className="w-full max-w-md">
-      <div className="bg-slate-700 p-8 sm:p-10 rounded-lg shadow-2xl">
+    <PageContainer>
+      <div className="w-full max-w-md mx-auto">
+        <div className="bg-slate-700 p-8 sm:p-10 rounded-lg shadow-2xl">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-white mb-2">Portal Monitor</h2>
           <p className="text-gray-300">Crie sua conta</p>
@@ -116,7 +118,8 @@ export default function Register(){
         <div className="text-center mt-6">
           <p className="text-sm text-gray-300">Já tem conta? <a href="#" onClick={(e)=>{e.preventDefault(); navigate('/')}} className="font-medium text-blue-400 hover:text-blue-300">Faça login</a></p>
         </div>
+        </div>
       </div>
-    </div>
+    </PageContainer>
   )
 }

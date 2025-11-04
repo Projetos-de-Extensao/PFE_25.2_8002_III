@@ -7,6 +7,7 @@ export default function Header() {
   const role = isBrowser ? window.localStorage.getItem('userRole') : null
   // show student UI in development automatically for demo purposes
   const isStudent = role === 'student' || (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.DEV)
+  const isProfessor = role === 'professor'
 
   const navigate = useNavigate()
 
@@ -23,6 +24,25 @@ export default function Header() {
             <div className="flex items-center gap-3">
               <Link to="/dashboard" className="bg-slate-700 hover:bg-slate-600 text-gray-100 px-3 py-2 rounded-md text-sm">Dashboard</Link>
               <Link to="/applications" className="bg-slate-700 hover:bg-slate-600 text-gray-100 px-3 py-2 rounded-md text-sm">Minhas Candidaturas</Link>
+              <button
+                onClick={() => {
+                  if (isBrowser) {
+                    window.localStorage.removeItem('userRole')
+                  }
+                  navigate && navigate('/')
+                }}
+                className="bg-red-600 hover:bg-red-500 text-white px-3 py-2 rounded-md text-sm"
+              >
+                Sair
+              </button>
+            </div>
+          )}
+
+          {isProfessor && (
+            <div className="flex items-center gap-3">
+              <Link to="/professor" className="bg-slate-700 hover:bg-slate-600 text-gray-100 px-3 py-2 rounded-md text-sm">Painel Professor</Link>
+              <Link to="/professor" className="bg-slate-700 hover:bg-slate-600 text-gray-100 px-3 py-2 rounded-md text-sm">Minhas Vagas</Link>
+              <Link to="/professor/vaga/v1/applicants" className="bg-slate-700 hover:bg-slate-600 text-gray-100 px-3 py-2 rounded-md text-sm">Avaliar Candidatos</Link>
               <button
                 onClick={() => {
                   if (isBrowser) {

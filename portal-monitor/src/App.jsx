@@ -7,20 +7,30 @@ import Register from './pages/Register'
 import StudentDashboard from './pages/StudentDashboard'
 import VagaDetailPage from './pages/VagaDetailPage'
 import MyApplicationsPage from './pages/MyApplicationsPage'
+import ProfessorDashboard from './pages/ProfessorDashboard'
+import VagaApplicantsPage from './pages/VagaApplicantsPage'
+import StudentApplicationPage from './pages/StudentApplicationPage'
 
 export default function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-grow flex items-center justify-center p-4">
-          <Routes>
+        <main className="flex-grow p-8">
+          <div className="w-full max-w-6xl mx-auto">
+            <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<StudentDashboard />} />
-              <Route path="/vaga/:id" element={<VagaDetailPage />} />
-              <Route path="/applications" element={<MyApplicationsPage />} />
-          </Routes>
+            <Route path="/vaga/:id" element={<VagaDetailPage />} />
+            <Route path="/applications" element={<MyApplicationsPage />} />
+
+            {/* Professor routes */}
+            <Route path="/professor" element={<ProfessorDashboard />} />
+            <Route path="/professor/vaga/:id/applicants" element={<VagaApplicantsPage />} />
+            <Route path="/vaga/:id/apply" element={<StudentApplicationPage />} />
+            </Routes>
+          </div>
         </main>
         <Footer />
       </div>
