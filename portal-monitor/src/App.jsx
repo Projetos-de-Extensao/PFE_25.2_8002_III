@@ -10,6 +10,7 @@ import MyApplicationsPage from './pages/MyApplicationsPage'
 import ProfessorDashboard from './pages/ProfessorDashboard'
 import VagaApplicantsPage from './pages/VagaApplicantsPage'
 import StudentApplicationPage from './pages/StudentApplicationPage'
+import AdministratorDashboard from './pages/AdministratorDashboard'
 
 export default function App() {
   return (
@@ -29,6 +30,8 @@ export default function App() {
             <Route path="/professor" element={<ProfessorDashboard />} />
             <Route path="/professor/vaga/:id/applicants" element={<VagaApplicantsPage />} />
             <Route path="/vaga/:id/apply" element={<StudentApplicationPage />} />
+            {/* Admin route */}
+            <Route path="/admin" element={<AdministratorDashboard />} />
             </Routes>
           </div>
         </main>

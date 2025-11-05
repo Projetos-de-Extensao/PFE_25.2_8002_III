@@ -25,9 +25,9 @@ export default function StudentDashboard(){
     </div>
 
     {/* Applications vertical column placed to the right on md+ screens */}
-        <div className="mt-4 md:mt-0 md:ml-6">
+  <div className="mt-4 md:mt-0 md:ml-6 mobile-full">
           <div className="rounded-xl border border-slate-700/60 bg-slate-800/60 px-4 py-3 text-sm text-gray-200 shadow-sm">
-            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-2">
               {(() => {
                 const apps = mockApplications
                 const total = apps.length
@@ -36,28 +36,28 @@ export default function StudentDashboard(){
                 const rejected = apps.filter(a => a.status === 'Rejeitado').length
                 return (
                   <>
-                        <a href={`/applications?status=${encodeURIComponent('Aceito')}`} className="inline-flex items-center justify-center w-44 px-3 py-2 rounded-md bg-green-500 text-black font-semibold shadow-sm hover:shadow">
+                        <a href={`/applications?status=${encodeURIComponent('Aceito')}`} className="inline-flex items-center justify-center w-full sm:w-44 px-3 py-2 rounded-md bg-green-500 text-black font-semibold shadow-sm hover:shadow">
                       <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       Aceitas: {accepted}
                     </a>
 
-                    <a href={`/applications?status=${encodeURIComponent('Em Análise')}`} className="inline-flex items-center justify-center w-44 px-3 py-2 rounded-md bg-orange-400 text-black font-semibold shadow-sm hover:shadow">
+                    <a href={`/applications?status=${encodeURIComponent('Em Análise')}`} className="inline-flex items-center justify-center w-full sm:w-44 px-3 py-2 rounded-md bg-orange-400 text-black font-semibold shadow-sm hover:shadow">
                       <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
                       </svg>
                       Em análise: {started}
                     </a>
 
-                    <a href={`/applications?status=${encodeURIComponent('Rejeitado')}`} className="inline-flex items-center justify-center w-44 px-3 py-2 rounded-md bg-red-500 text-black font-semibold shadow-sm hover:shadow">
+                    <a href={`/applications?status=${encodeURIComponent('Rejeitado')}`} className="inline-flex items-center justify-center w-full sm:w-44 px-3 py-2 rounded-md bg-red-500 text-black font-semibold shadow-sm hover:shadow">
                       <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                       Rejeitadas: {rejected}
                     </a>
 
-                    <Link to="/applications" className="inline-flex items-center justify-center w-44 px-3 py-2 rounded-md bg-slate-600 text-black font-semibold shadow-sm hover:shadow">
+                    <Link to="/applications" className="inline-flex items-center justify-center w-full sm:w-44 px-3 py-2 rounded-md bg-slate-600 text-black font-semibold shadow-sm hover:shadow">
                       <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1M16 7a4 4 0 11-8 0 4 4 0 018 0z" />
                       </svg>

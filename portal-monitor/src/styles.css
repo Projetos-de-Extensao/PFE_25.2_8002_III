@@ -33,3 +33,67 @@ body { background-color: #0f1724 }
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
+
+/* Mobile reflow: when viewport is small, switch many flex containers to column
+	 and show a mobile hamburger navigation. Threshold chosen ~700px as requested. */
+@media (max-width: 700px) {
+	/* Scoped stacking: only elements explicitly marked with .mobile-stack will switch to column */
+	.mobile-stack { display: flex !important; flex-direction: column !important; }
+	.mobile-stack .items-center { align-items: flex-start !important; }
+	.mobile-stack .justify-between { justify-content: flex-start !important; }
+
+	/* Make cards and borders full-width and stacked when inside mobile-stack */
+	.mobile-stack .rounded-lg, .mobile-stack .rounded-xl { width: 100%; }
+
+	/* Header adjustments: hide desktop nav, show hamburger */
+	.desktop-nav { display: none !important; }
+	.mobile-nav { display: block !important; position: relative; }
+	.hamburger { display: inline-flex !important; }
+
+	/* Ensure dropdown menu uses full width when open */
+	.mobile-nav .absolute { right: 0; left: 0; margin: 0 1rem; width: auto; }
+
+	/* Smaller text and spacing for mobile */
+	.max-w-6xl { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Expand central panels on mobile for better readability */
+@media (max-width: 700px) {
+	.mobile-stack .mobile-full { width: calc(100% - 2rem) !important; margin-left: 1rem !important; margin-right: 1rem !important; }
+	.mobile-stack .rounded-xl { width: calc(100% - 2rem) !important; margin-left: 1rem !important; margin-right: 1rem !important; }
+	/* Make inner content use full available width */
+	.mobile-stack .mobile-full .rounded-xl { width: 100% !important; margin: 0 !important; }
+}
+
+/* Mobile overlay panel for hamburger menu */
+.mobile-overlay{
+	position: fixed;
+	inset: 0;
+	height: 100vh;
+	background: #ffffff !important;
+	z-index: 9999 !important;
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	animation: mobileOverlayIn .22s ease-out forwards;
+}
+.mobile-overlay__header{ display:flex; align-items:center; justify-content:space-between; padding: 1rem; border-bottom: 1px solid rgba(15, 23, 36, 0.06) }
+.mobile-overlay__panel{ padding: 1rem }
+
+@keyframes mobileOverlayIn{
+	from { transform: translateY(-8%); opacity: 0 }
+	to { transform: translateY(0); opacity: 1 }
+}
+
+/* Ensure the hamburger icon remains visible on mobile */
+.hamburger svg { color: #fff }
+
+/* make sure overlay text and links use dark color for readability */
+.mobile-overlay, .mobile-overlay *{ color: #0f1724 !important }
+.mobile-overlay a, .mobile-overlay button{ color: #0f1724 !important }
+
+/* Hide mobile nav container by default on larger screens */
+.mobile-nav { display: none; }
