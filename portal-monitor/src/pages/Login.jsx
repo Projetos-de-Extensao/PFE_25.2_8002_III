@@ -1,16 +1,28 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import PageContainer from '../components/PageContainer'
 
 export default function Login(){
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
+  const [tipoUsuario, setTipoUsuario] = useState('aluno')
 
   function handleSubmit(e){
     e.preventDefault()
-    // For class/demo: just log values for now. Replace with API call later.
-    console.log('login attempt', { email, senha })
-    alert('Login submetido (demo)')
+    // Save auth to localStorage
+    localStorage.setItem('isAuthenticated', 'true')
+    localStorage.setItem('userType', tipoUsuario)
+    localStorage.setItem('userEmail', email)
+    
+    // Redirect based on user type
+    if(tipoUsuario === 'aluno'){
+      navigate('/dashboard')
+    } else if(tipoUsuario === 'professor'){
+      navigate('/professor')
+    } else if(tipoUsuario === 'admin'){
+      navigate('/admin')
+    }
   }
 
   return (
@@ -61,6 +73,45 @@ export default function Login(){
                 placeholder="Sua senha"
                 className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md py-2.5 sm:py-3 pl-10 sm:pl-11 pr-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm text-sm sm:text-base"
               />
+            </div>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-300 mb-3">Tipo de Usuário</label>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <label className="flex items-center cursor-pointer">
+                <input
+                  type="radio"
+                  name="tipoUsuario"
+                  value="aluno"
+                  checked={tipoUsuario === 'aluno'}
+                  onChange={(e) => setTipoUsuario(e.target.value)}
+                  className="custom-radio"
+                />
+                <span className="text-sm text-gray-300">Aluno</span>
+              </label>
+              <label className="flex items-center cursor-pointer">
+                <input
+                  type="radio"
+                  name="tipoUsuario"
+                  value="professor"
+                  checked={tipoUsuario === 'professor'}
+                  onChange={(e) => setTipoUsuario(e.target.value)}
+                  className="custom-radio"
+                />
+                <span className="text-sm text-gray-300">Professor</span>
+              </label>
+              <label className="flex items-center cursor-pointer">
+                <input
+                  type="radio"
+                  name="tipoUsuario"
+                  value="admin"
+                  checked={tipoUsuario === 'admin'}
+                  onChange={(e) => setTipoUsuario(e.target.value)}
+                  className="custom-radio"
+                />
+                <span className="text-sm text-gray-300">Administrador</span>
+              </label>
             </div>
           </div>
 

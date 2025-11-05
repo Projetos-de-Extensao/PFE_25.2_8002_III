@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ProtectedRoute from './components/ProtectedRoute'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import StudentDashboard from './pages/StudentDashboard'
@@ -20,18 +21,21 @@ export default function App() {
         <main className="flex-grow p-4 sm:p-8 overflow-x-hidden">
           <div className="w-full max-w-6xl mx-auto overflow-x-hidden">
             <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<StudentDashboard />} />
-            <Route path="/vaga/:id" element={<VagaDetailPage />} />
-            <Route path="/applications" element={<MyApplicationsPage />} />
+              <Route path="/" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              
+              {/* Student routes */}
+              <Route path="/dashboard" element={<ProtectedRoute allowedTypes={['aluno']}><StudentDashboard /></ProtectedRoute>} />
+              <Route path="/vaga/:id" element={<ProtectedRoute allowedTypes={['aluno']}><VagaDetailPage /></ProtectedRoute>} />
+              <Route path="/applications" element={<ProtectedRoute allowedTypes={['aluno']}><MyApplicationsPage /></ProtectedRoute>} />
+              <Route path="/vaga/:id/apply" element={<ProtectedRoute allowedTypes={['aluno']}><StudentApplicationPage /></ProtectedRoute>} />
 
-            {/* Professor routes */}
-            <Route path="/professor" element={<ProfessorDashboard />} />
-            <Route path="/professor/vaga/:id/applicants" element={<VagaApplicantsPage />} />
-            <Route path="/vaga/:id/apply" element={<StudentApplicationPage />} />
-            {/* Admin route */}
-            <Route path="/admin" element={<AdministratorDashboard />} />
+              {/* Professor routes */}
+              <Route path="/professor" element={<ProtectedRoute allowedTypes={['professor']}><ProfessorDashboard /></ProtectedRoute>} />
+              <Route path="/professor/vaga/:id/applicants" element={<ProtectedRoute allowedTypes={['professor']}><VagaApplicantsPage /></ProtectedRoute>} />
+              
+              {/* Admin route */}
+              <Route path="/admin" element={<ProtectedRoute allowedTypes={['admin']}><AdministratorDashboard /></ProtectedRoute>} />
             </Routes>
           </div>
         </main>
