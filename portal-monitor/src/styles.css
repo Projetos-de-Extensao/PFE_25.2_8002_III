@@ -119,7 +119,7 @@ select option:focus {
 /* Mobile reflow: Mobile First approach
 	 Base styles are for mobile, then we enhance for larger screens */
 
-/* Mobile base styles (default) */
+/* Mobile base styles (default - 0 to 720px) */
 .mobile-stack { 
 	display: flex; 
 	flex-direction: column; 
@@ -138,18 +138,31 @@ select option:focus {
 	width: 100%; 
 }
 
-/* Header: mobile by default */
-.desktop-nav { 
-	display: none; 
+/* Header Navigation: Mobile First
+   Nota: O Header.jsx já controla se o nav aparece (isAuthenticated)
+   O CSS apenas controla QUAL nav aparece (desktop vs mobile) */
+
+/* Mobile (0-720px): Hide desktop nav, show mobile nav with hamburger */
+header nav .desktop-nav,
+header .desktop-nav { 
+	display: none !important;
 }
 
-.mobile-nav { 
-	display: block; 
+header nav .mobile-nav,
+header .mobile-nav { 
+	display: block !important;
 	position: relative; 
 }
 
-.hamburger { 
-	display: inline-flex; 
+header nav .mobile-nav button.hamburger,
+header .mobile-nav button.hamburger,
+header button.hamburger { 
+	display: inline-flex !important;
+}
+
+/* Ensure nav container doesn't use flex in mobile */
+header nav {
+	display: block !important;
 }
 
 .mobile-nav .absolute { 
@@ -182,18 +195,32 @@ select option:focus {
 	margin: 0; 
 }
 
-/* Tablet (> 720px) - Mobile First */
+/* Tablet (> 720px) - Mobile First - Show desktop nav, hide mobile nav */
 @media (min-width: 721px) {
-	/* Reset mobile-specific styles for tablet+ */
-	.desktop-nav { 
-		display: block !important; 
+	/* Allow nav to use flex */
+	header nav {
+		display: flex !important;
+		align-items: center !important;
+		gap: 0.5rem !important;
 	}
 	
-	.mobile-nav { 
+	/* Show desktop navigation with flex layout */
+	header nav .desktop-nav,
+	header .desktop-nav { 
+		display: flex !important;
+		align-items: center !important;
+		gap: 0.5rem !important;
+	}
+	
+	/* Hide mobile navigation completely */
+	header nav .mobile-nav,
+	header .mobile-nav { 
 		display: none !important; 
 	}
 	
-	.hamburger { 
+	header nav .mobile-nav button.hamburger,
+	header .mobile-nav button.hamburger,
+	header button.hamburger { 
 		display: none !important; 
 	}
 }
@@ -213,8 +240,32 @@ select option:focus {
 	-webkit-overflow-scrolling: touch;
 	animation: mobileOverlayIn .22s ease-out forwards;
 }
-.mobile-overlay__header{ display:flex; align-items:center; justify-content:space-between; padding: 1rem; border-bottom: 1px solid rgba(15, 23, 36, 0.06) }
-.mobile-overlay__panel{ padding: 1rem }
+
+.mobile-overlay__header{ 
+	display: flex; 
+	align-items: center; 
+	justify-content: space-between; 
+	padding: 1rem; 
+	border-bottom: 1px solid rgba(15, 23, 36, 0.06);
+}
+
+.mobile-overlay__panel{ 
+	padding: 1rem;
+}
+
+/* Menu mobile: links em coluna (vertical) */
+.mobile-overlay__panel nav {
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 0.5rem !important;
+}
+
+.mobile-overlay__panel nav a,
+.mobile-overlay__panel nav button {
+	width: 100% !important;
+	text-align: left !important;
+	display: block !important;
+}
 
 @keyframes mobileOverlayIn{
 	from { transform: translateY(-8%); opacity: 0 }

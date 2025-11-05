@@ -43,9 +43,9 @@ export default function Header() {
         </div>
 
         {isAuthenticated && (
-          <nav className="flex items-center gap-2">
+          <nav>
             {/* Desktop nav */}
-            <div className="desktop-nav flex items-center gap-2">
+            <div className="desktop-nav items-center gap-2">
               {userType === 'aluno' && (
                 <>
                   <Link
