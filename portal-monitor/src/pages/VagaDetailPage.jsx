@@ -49,9 +49,9 @@ export default function VagaDetailPage(){
             <p className="text-gray-300 text-sm">{vaga.professor} — responsável pela seleção dos monitores.</p>
           </section>
 
-          <div className="flex items-center gap-3">
-            <button onClick={() => navigate(`/vaga/${vaga.id}/apply`)} className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition shadow-sm">Candidatar-se</button>
-            <button onClick={() => navigate(-1)} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm">Voltar</button>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <button onClick={() => navigate(`/vaga/${vaga.id}/apply`)} className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition shadow-sm flex-1 sm:flex-none sm:min-w-[160px]">Candidatar-se</button>
+            <button onClick={() => navigate(-1)} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm flex-1 sm:flex-none sm:min-w-[160px]">Voltar</button>
           </div>
         </div>
       </div>
