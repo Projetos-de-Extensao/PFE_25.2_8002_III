@@ -18,6 +18,64 @@ html {
 /* keep .input-bg availability as in prototype */
 .input-bg { background-color: var(--bg-input); }
 
+/* Custom select styling */
+select {
+	background-image: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* Force dropdown to stay within viewport and match select width */
+select:focus {
+	position: relative;
+	z-index: 10;
+}
+
+/* Style the dropdown options with better visibility */
+select option {
+	background-color: #1e293b !important;
+	color: #f1f5f9 !important;
+	padding: 12px 12px !important;
+	font-size: 14px !important;
+	line-height: 1.5 !important;
+	border: none !important;
+	min-height: 40px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
+}
+
+select option:checked,
+select option:focus {
+	background: linear-gradient(#334155, #334155) !important;
+	background-color: #334155 !important;
+	color: #facc15 !important;
+	font-weight: 500 !important;
+}
+
+/* Ensure select dropdown works properly on mobile */
+@media (max-width: 700px) {
+	select {
+		font-size: 14px;
+		min-height: 44px;
+		box-sizing: border-box;
+	}
+	
+	select option {
+		font-size: 14px !important;
+		padding: 14px 12px !important;
+		min-height: 44px !important;
+		line-height: 1.4 !important;
+		width: 100% !important;
+	}
+}
+
 /* custom radio styles from prototype */
 .custom-radio{
 	appearance: none;

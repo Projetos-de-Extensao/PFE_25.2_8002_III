@@ -2,6 +2,7 @@ import React from 'react'
 import { mockApplications, mockVagas } from '../data/mockData'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import PageContainer from '../components/PageContainer'
+import CustomSelect from '../components/CustomSelect'
 
 function statusBadge(status){
   const base = 'inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold '
@@ -30,9 +31,15 @@ export default function MyApplicationsPage(){
     return map
   }, [])
 
-  function handleSelect(e){
-    const s = e.target.value
-    if(s) navigate(`/applications?status=${encodeURIComponent(s)}`)
+  const statusOptions = [
+    { value: '', label: 'Todos' },
+    { value: 'Em Análise', label: 'Em Análise' },
+    { value: 'Aceito', label: 'Aceito' },
+    { value: 'Rejeitado', label: 'Rejeitado' }
+  ]
+
+  function handleSelect(val){
+    if(val) navigate(`/applications?status=${encodeURIComponent(val)}`)
     else navigate('/applications')
   }
 
@@ -44,14 +51,16 @@ export default function MyApplicationsPage(){
 
         <div className="mb-4 sm:mb-5 text-sm text-gray-300 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
           <div className="leading-relaxed">Abaixo estão suas candidaturas de exemplo (dados mock). Use este espaço para acompanhar o status das aplicações.</div>
-          <div className="sm:ml-auto w-full sm:w-auto flex items-center gap-2">
-            <label className="text-sm text-gray-300">Filtrar:</label>
-            <select value={statusFilter} onChange={handleSelect} className="bg-[#2c3346] text-gray-100 rounded-md p-2 text-sm w-full sm:w-auto min-w-[140px]">
-              <option value="">Todos</option>
-              <option value="Em Análise">Em Análise</option>
-              <option value="Aceito">Aceito</option>
-              <option value="Rejeitado">Rejeitado</option>
-            </select>
+          <div className="sm:ml-auto w-full sm:w-auto sm:max-w-[250px] flex items-center gap-2">
+            <label className="text-sm text-gray-300 whitespace-nowrap">Filtrar:</label>
+            <div className="flex-1 sm:flex-none sm:min-w-[160px]">
+              <CustomSelect
+                value={statusFilter}
+                onChange={handleSelect}
+                options={statusOptions}
+                placeholder="Todos"
+              />
+            </div>
           </div>
         </div>
 

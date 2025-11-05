@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import VagaCard from '../components/VagaCard'
+import CustomSelect from '../components/CustomSelect'
 import { Link } from 'react-router-dom'
 import { mockApplications, mockVagas } from '../data/mockData'
 
@@ -7,6 +8,14 @@ export default function StudentDashboard(){
   // Simple local state for search/filter inputs (static UI for RF04)
   const [query, setQuery] = useState('')
   const [filtroCurso, setFiltroCurso] = useState('')
+
+  const cursoOptions = [
+    { value: '', label: 'Todos os cursos' },
+    { value: 'Ciência da Computação', label: 'Ciência da Computação' },
+    { value: 'Sistemas de Informação', label: 'Sistemas de Informação' },
+    { value: 'Design e Web', label: 'Design e Web' },
+    { value: 'Engenharia', label: 'Engenharia' }
+  ]
 
   // For demo, do a basic client-side filter by title or curso
   const shown = mockVagas.filter(v => {
@@ -79,23 +88,22 @@ export default function StudentDashboard(){
                     placeholder="Pesquisar por título ou curso"
                     value={query}
                     onChange={e=>setQuery(e.target.value)}
-                    className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm"
+                    className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-2.5 sm:p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm text-sm sm:text-base"
                   />
                 </div>
 
-                <div className="w-full sm:w-64">
+                <div className="w-full sm:w-auto sm:min-w-[200px] sm:max-w-[280px]">
                   <label className="sr-only">Filtrar por curso</label>
-                  <select value={filtroCurso} onChange={e=>setFiltroCurso(e.target.value)} className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm">
-                    <option value="">Todos os cursos</option>
-                    <option value="Ciência da Computação">Ciência da Computação</option>
-                    <option value="Sistemas de Informação">Sistemas de Informação</option>
-                    <option value="Design e Web">Design e Web</option>
-                    <option value="Engenharia">Engenharia</option>
-                  </select>
+                  <CustomSelect
+                    value={filtroCurso}
+                    onChange={setFiltroCurso}
+                    options={cursoOptions}
+                    placeholder="Todos os cursos"
+                  />
                 </div>
 
-                <div className="flex-none">
-                  <button onClick={()=>{setQuery(''); setFiltroCurso('')}} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-5 py-3 rounded-md shadow-sm">X</button>
+                <div className="flex-none w-full sm:w-auto">
+                  <button onClick={()=>{setQuery(''); setFiltroCurso('')}} className="w-full sm:w-auto bg-slate-600 hover:bg-slate-500 text-gray-100 px-5 py-2.5 sm:py-3 rounded-md shadow-sm text-sm sm:text-base">Limpar</button>
                 </div>
               </div>
             </div>
