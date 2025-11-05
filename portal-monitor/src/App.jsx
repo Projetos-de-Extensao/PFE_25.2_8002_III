@@ -15,10 +15,10 @@ import AdministratorDashboard from './pages/AdministratorDashboard'
 export default function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col overflow-x-hidden">
         <Header />
-        <main className="flex-grow p-8">
-          <div className="w-full max-w-6xl mx-auto">
+        <main className="flex-grow p-4 sm:p-8 overflow-x-hidden">
+          <div className="w-full max-w-6xl mx-auto overflow-x-hidden">
             <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/register" element={<Register />} />

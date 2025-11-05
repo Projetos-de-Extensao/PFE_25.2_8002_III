@@ -1,6 +1,19 @@
 /* Minimal project stylesheet. Tailwind is loaded via CDN in index.html so this file can hold small overrides if needed. */
 :root { --bg-input: #2c3346 }
-body { background-color: #0f1724 }
+body { 
+	background-color: #0f1724;
+	overflow-x: hidden;
+	max-width: 100vw;
+}
+
+html {
+	overflow-x: hidden;
+	max-width: 100vw;
+}
+
+* {
+	max-width: 100%;
+}
 
 /* keep .input-bg availability as in prototype */
 .input-bg { background-color: var(--bg-input); }
