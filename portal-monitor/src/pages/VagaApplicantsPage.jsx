@@ -73,16 +73,16 @@ export default function VagaApplicantsPage(){
   return (
     <PageContainer>
       <div className="w-full max-w-4xl mx-auto">
-        <div className="bg-slate-700 rounded-lg p-8 shadow-lg">
+        <div className="rounded-xl border border-slate-700/60 bg-slate-800/60 p-8 shadow-sm">
         <h1 className="text-2xl font-bold text-white mb-2">Candidatos para: {vaga.titulo}</h1>
         <p className="text-sm text-gray-300 mb-6">Lista de candidatos (dados mock + envios de demonstração). Clique no nome para ver detalhes da candidatura.</p>
 
         <section className="mb-6">
           <h2 className="text-lg font-semibold text-white mb-3">Em processo</h2>
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto rounded-lg border border-slate-700/60">
             <table className="min-w-full text-left">
               <thead>
-                <tr className="text-gray-300 text-sm">
+                <tr className="text-gray-300 text-sm bg-slate-700/60">
                   <th className="py-2 px-3">Nome</th>
                   <th className="py-2 px-3">Curso</th>
                   <th className="py-2 px-3">Email</th>
@@ -92,7 +92,7 @@ export default function VagaApplicantsPage(){
               <tbody>
                 {inProcess.map(ap => (
                   <React.Fragment key={ap.id}>
-                    <tr className="border-t border-slate-600">
+                    <tr className="border-t border-slate-700/60 hover:bg-slate-700/40">
                       <td className="py-3 px-3 text-gray-100">
                         <button onClick={()=>toggleExpand(ap.id)} className="text-left w-full text-blue-300 hover:underline">{ap.nome}</button>
                       </td>
@@ -104,7 +104,7 @@ export default function VagaApplicantsPage(){
                     </tr>
 
                     {expanded === ap.id && (
-                      <tr className="bg-slate-600">
+                      <tr className="bg-slate-700/50">
                         <td colSpan={4} className="py-3 px-3 text-gray-100">
                           <div className="space-y-2">
                             <div><strong className="text-white">Nota na disciplina:</strong> {ap.grade ?? '—'}</div>
@@ -126,10 +126,10 @@ export default function VagaApplicantsPage(){
           {selected.length === 0 ? (
             <div className="text-gray-300">Nenhum candidato selecionado ainda.</div>
           ) : (
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto rounded-lg border border-slate-700/60">
               <table className="min-w-full text-left">
                 <thead>
-                  <tr className="text-gray-300 text-sm">
+                  <tr className="text-gray-300 text-sm bg-slate-700/60">
                     <th className="py-2 px-3">Nome</th>
                     <th className="py-2 px-3">Curso</th>
                     <th className="py-2 px-3">Relatório</th>
@@ -139,13 +139,13 @@ export default function VagaApplicantsPage(){
                 </thead>
                 <tbody>
                   {selected.map(ap => (
-                        <tr key={ap.id} className="border-t border-slate-600">
+                        <tr key={ap.id} className="border-t border-slate-700/60 hover:bg-slate-700/40">
                           <td className="py-3 px-3 text-gray-100">{ap.nome}</td>
                           <td className="py-3 px-3 text-gray-100">{ap.curso}</td>
                           <td className="py-3 px-3 text-gray-100">{ap.relatorio || 'Sem relatório disponível'}</td>
                           <td className="py-3 px-3 text-gray-100">{ap.cvName ? ap.cvName : '—'}</td>
                           <td className="py-3 px-3">
-                            <button onClick={()=>handleUnselect(ap.id)} className="bg-red-600 hover:bg-red-500 text-white font-semibold px-3 py-2 rounded-md">Remover seleção</button>
+                            <button onClick={()=>handleUnselect(ap.id)} className="bg-red-600 hover:bg-red-500 text-white font-semibold px-3 py-2 rounded-md shadow-sm">Remover seleção</button>
                           </td>
                         </tr>
                   ))}
@@ -156,7 +156,7 @@ export default function VagaApplicantsPage(){
         </section>
 
         <div className="mt-6 flex items-center gap-3">
-          <Link to="/professor" className="bg-slate-600 text-gray-200 px-4 py-2 rounded-md">Voltar ao Painel</Link>
+          <Link to="/professor" className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm">Voltar ao Painel</Link>
         </div>
         </div>
       </div>

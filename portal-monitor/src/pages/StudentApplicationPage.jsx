@@ -61,26 +61,26 @@ export default function StudentApplicationPage(){
   return (
     <PageContainer>
       <div className="w-full max-w-3xl mx-auto">
-        <div className="bg-slate-700 rounded-lg p-8 shadow-lg">
-        <h1 className="text-2xl font-bold text-white mb-4">Formulário de Candidatura</h1>
+        <div className="rounded-xl border border-slate-700/60 bg-slate-800/60 p-8 shadow-sm">
+        <h1 className="text-2xl font-bold text-white mb-4 tracking-tight">Formulário de Candidatura</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm text-gray-300 mb-1">Nome</label>
-            <input value={nome} onChange={e=>setNome(e.target.value)} className="w-full p-2 rounded-md bg-[#2c3346] text-gray-100" required disabled={profileExists} />
+            <input value={nome} onChange={e=>setNome(e.target.value)} className="w-full p-3 rounded-md bg-[#2c3346] text-gray-100 border border-slate-700/60 shadow-sm" required disabled={profileExists} />
             {profileExists && <div className="text-xs text-gray-400 mt-1">Nome pré-preenchido pelo perfil (não editável).</div>}
           </div>
           <div>
             <label className="block text-sm text-gray-300 mb-1">Email</label>
-            <input value={email} type="email" onChange={e=>setEmail(e.target.value)} className="w-full p-2 rounded-md bg-[#2c3346] text-gray-100" required disabled={profileExists} />
+            <input value={email} type="email" onChange={e=>setEmail(e.target.value)} className="w-full p-3 rounded-md bg-[#2c3346] text-gray-100 border border-slate-700/60 shadow-sm" required disabled={profileExists} />
             {profileExists && <div className="text-xs text-gray-400 mt-1">Email pré-preenchido pelo perfil (não editável).</div>}
           </div>
           <div>
             <label className="block text-sm text-gray-300 mb-1">Nota obtida na disciplina (0-10)</label>
-            <input value={grade} type="number" min="0" max="10" step="0.1" onChange={e=>setGrade(e.target.value)} className="w-32 p-2 rounded-md bg-[#2c3346] text-gray-100" required />
+            <input value={grade} type="number" min="0" max="10" step="0.1" onChange={e=>setGrade(e.target.value)} className="w-32 p-3 rounded-md bg-[#2c3346] text-gray-100 border border-slate-700/60 shadow-sm" required />
           </div>
           <div>
             <label className="block text-sm text-gray-300 mb-1">Breve descrição / por que você se candidata</label>
-            <textarea value={descricao} onChange={e=>setDescricao(e.target.value)} className="w-full p-2 rounded-md bg-[#2c3346] text-gray-100" rows={4} required />
+            <textarea value={descricao} onChange={e=>setDescricao(e.target.value)} className="w-full p-3 rounded-md bg-[#2c3346] text-gray-100 border border-slate-700/60 shadow-sm" rows={4} required />
           </div>
 
           <div>
@@ -104,8 +104,8 @@ export default function StudentApplicationPage(){
           </div>
 
           <div className="flex items-center gap-3">
-            <button type="submit" className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md">Enviar Candidatura</button>
-            <button type="button" onClick={()=>navigate(-1)} className="bg-slate-600 text-gray-200 px-4 py-2 rounded-md">Cancelar</button>
+            <button type="submit" className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md shadow-sm hover:bg-yellow-300">Enviar Candidatura</button>
+            <button type="button" onClick={()=>navigate(-1)} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm">Cancelar</button>
           </div>
         </form>
         </div>

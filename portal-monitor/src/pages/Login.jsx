@@ -16,9 +16,9 @@ export default function Login(){
   return (
     <PageContainer>
       <div className="w-full max-w-md mx-auto">
-        <div className="bg-slate-700 p-8 sm:p-10 rounded-lg shadow-2xl">
+        <div className="rounded-xl border border-slate-700/60 bg-slate-800/60 p-8 sm:p-10 shadow-sm">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-white mb-2">Portal Monitor</h2>
+          <h2 className="text-3xl font-bold text-white mb-2 tracking-tight">Portal Monitor</h2>
           <p className="text-gray-300">Acesse sua conta</p>
         </div>
 
@@ -39,7 +39,7 @@ export default function Login(){
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder="nome@aluno.ibmec.com"
-                className="w-full bg-[#2c3346] text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm"
               />
             </div>
           </div>
@@ -59,13 +59,13 @@ export default function Login(){
                 value={senha}
                 onChange={e => setSenha(e.target.value)}
                 placeholder="Sua senha"
-                className="w-full bg-[#2c3346] text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm"
               />
             </div>
           </div>
 
           <div>
-            <button type="submit" className="w-full bg-yellow-400 text-gray-900 font-bold p-3 rounded-md hover:bg-yellow-300 transition-colors duration-300">Entrar</button>
+            <button type="submit" className="w-full bg-yellow-400 text-gray-900 font-bold p-3 rounded-md hover:bg-yellow-300 transition-colors duration-300 shadow-sm">Entrar</button>
           </div>
         </form>
 

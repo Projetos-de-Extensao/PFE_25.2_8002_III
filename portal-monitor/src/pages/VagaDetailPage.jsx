@@ -12,9 +12,12 @@ export default function VagaDetailPage(){
   return (
     <PageContainer>
       <div className="w-full max-w-4xl mx-auto">
-        <div className="bg-slate-700 rounded-lg p-8 shadow-lg">
+        <div className="rounded-xl border border-slate-700/60 bg-slate-800/60 p-8 shadow-sm">
+          <div className="mb-4 text-sm">
+            <Link to="/dashboard" className="text-blue-300 hover:underline">← Voltar às vagas</Link>
+          </div>
           <div className="mb-6">
-            <h1 className="text-3xl font-bold text-white">{vaga.titulo}</h1>
+            <h1 className="text-3xl font-bold text-white tracking-tight">{vaga.titulo}</h1>
             <div className="text-sm text-gray-300 mt-1">Curso: {vaga.curso} • ID da vaga: {vaga.id}</div>
           </div>
 
@@ -47,8 +50,8 @@ export default function VagaDetailPage(){
           </section>
 
           <div className="flex items-center gap-3">
-            <button onClick={() => navigate(`/vaga/${vaga.id}/apply`)} className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition">Candidatar-se</button>
-            <button onClick={() => navigate(-1)} className="bg-slate-600 text-gray-200 px-4 py-2 rounded-md">Voltar</button>
+            <button onClick={() => navigate(`/vaga/${vaga.id}/apply`)} className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition shadow-sm">Candidatar-se</button>
+            <button onClick={() => navigate(-1)} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm">Voltar</button>
           </div>
         </div>
       </div>
