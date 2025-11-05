@@ -3,9 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portal de Monitoria - Sistema de gerenciamento de vagas de monitoria">
     <title>Portal Monitor</title>
-    <!-- Tailwind CDN for prototype styling -->
+    <!-- Tailwind CDN for prototype styling with custom config -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configuração Mobile First - Issue #8
+      // Breakpoints: Tablet (> 720px), Desktop (> 1280px)
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              // Mobile First breakpoints - Issue #8
+              // Tablet: > 720px
+              'sm': '721px',
+              // Breakpoint intermediário (mantido para compatibilidade)
+              'md': '768px',
+              // Desktop: > 1280px  
+              'lg': '1281px',
+            }
+          }
+        }
+      }
+    </script>
     <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

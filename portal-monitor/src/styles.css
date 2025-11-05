@@ -1,5 +1,18 @@
-/* Minimal project stylesheet. Tailwind is loaded via CDN in index.html so this file can hold small overrides if needed. */
-:root { --bg-input: #2c3346 }
+/* ============================================
+   Portal Monitor - Stylesheet
+   Mobile First Approach - Issue #8
+   Breakpoints: 
+   - Mobile: 0-720px (base)
+   - Tablet: > 720px (721px+)
+   - Desktop: > 1280px (1281px+)
+   ============================================ */
+
+/* CSS Variables */
+:root { 
+	--bg-input: #2c3346;
+}
+
+/* Base styles - Mobile First */
 body { 
 	background-color: #0f1724;
 	overflow-x: hidden;
@@ -15,8 +28,10 @@ html {
 	max-width: 100%;
 }
 
-/* keep .input-bg availability as in prototype */
-.input-bg { background-color: var(--bg-input); }
+/* Input background utility */
+.input-bg { 
+	background-color: var(--bg-input); 
+}
 
 /* Custom select styling */
 select {
@@ -26,6 +41,9 @@ select {
 	appearance: none;
 	max-width: 100%;
 	box-sizing: border-box;
+	/* Mobile First: estilos base para mobile */
+	font-size: 14px;
+	min-height: 44px;
 }
 
 /* Force dropdown to stay within viewport and match select width */
@@ -38,11 +56,11 @@ select:focus {
 select option {
 	background-color: #1e293b !important;
 	color: #f1f5f9 !important;
-	padding: 12px 12px !important;
+	padding: 14px 12px !important;
 	font-size: 14px !important;
-	line-height: 1.5 !important;
+	line-height: 1.4 !important;
 	border: none !important;
-	min-height: 40px !important;
+	min-height: 44px !important;
 	width: 100% !important;
 	max-width: 100% !important;
 	box-sizing: border-box !important;
@@ -59,20 +77,13 @@ select option:focus {
 	font-weight: 500 !important;
 }
 
-/* Ensure select dropdown works properly on mobile */
-@media (max-width: 700px) {
-	select {
-		font-size: 14px;
-		min-height: 44px;
-		box-sizing: border-box;
-	}
-	
+/* Mobile First: Tablet (> 720px) */
+@media (min-width: 721px) {
 	select option {
 		font-size: 14px !important;
-		padding: 14px 12px !important;
-		min-height: 44px !important;
-		line-height: 1.4 !important;
-		width: 100% !important;
+		padding: 12px 12px !important;
+		min-height: 40px !important;
+		line-height: 1.5 !important;
 	}
 }
 
@@ -105,35 +116,86 @@ select option:focus {
 	transform: translate(-50%, -50%);
 }
 
-/* Mobile reflow: when viewport is small, switch many flex containers to column
-	 and show a mobile hamburger navigation. Threshold chosen ~700px as requested. */
-@media (max-width: 700px) {
-	/* Scoped stacking: only elements explicitly marked with .mobile-stack will switch to column */
-	.mobile-stack { display: flex !important; flex-direction: column !important; }
-	.mobile-stack .items-center { align-items: flex-start !important; }
-	.mobile-stack .justify-between { justify-content: flex-start !important; }
+/* Mobile reflow: Mobile First approach
+	 Base styles are for mobile, then we enhance for larger screens */
 
-	/* Make cards and borders full-width and stacked when inside mobile-stack */
-	.mobile-stack .rounded-lg, .mobile-stack .rounded-xl { width: 100%; }
-
-	/* Header adjustments: hide desktop nav, show hamburger */
-	.desktop-nav { display: none !important; }
-	.mobile-nav { display: block !important; position: relative; }
-	.hamburger { display: inline-flex !important; }
-
-	/* Ensure dropdown menu uses full width when open */
-	.mobile-nav .absolute { right: 0; left: 0; margin: 0 1rem; width: auto; }
-
-	/* Smaller text and spacing for mobile */
-	.max-w-6xl { padding-left: 1rem; padding-right: 1rem; }
+/* Mobile base styles (default) */
+.mobile-stack { 
+	display: flex; 
+	flex-direction: column; 
 }
 
-/* Expand central panels on mobile for better readability */
-@media (max-width: 700px) {
-	.mobile-stack .mobile-full { width: calc(100% - 2rem) !important; margin-left: 1rem !important; margin-right: 1rem !important; }
-	.mobile-stack .rounded-xl { width: calc(100% - 2rem) !important; margin-left: 1rem !important; margin-right: 1rem !important; }
-	/* Make inner content use full available width */
-	.mobile-stack .mobile-full .rounded-xl { width: 100% !important; margin: 0 !important; }
+.mobile-stack .items-center { 
+	align-items: flex-start; 
+}
+
+.mobile-stack .justify-between { 
+	justify-content: flex-start; 
+}
+
+.mobile-stack .rounded-lg, 
+.mobile-stack .rounded-xl { 
+	width: 100%; 
+}
+
+/* Header: mobile by default */
+.desktop-nav { 
+	display: none; 
+}
+
+.mobile-nav { 
+	display: block; 
+	position: relative; 
+}
+
+.hamburger { 
+	display: inline-flex; 
+}
+
+.mobile-nav .absolute { 
+	right: 0; 
+	left: 0; 
+	margin: 0 1rem; 
+	width: auto; 
+}
+
+.max-w-6xl { 
+	padding-left: 1rem; 
+	padding-right: 1rem; 
+}
+
+/* Mobile: expand central panels for better readability */
+.mobile-stack .mobile-full { 
+	width: calc(100% - 2rem); 
+	margin-left: 1rem; 
+	margin-right: 1rem; 
+}
+
+.mobile-stack .rounded-xl { 
+	width: calc(100% - 2rem); 
+	margin-left: 1rem; 
+	margin-right: 1rem; 
+}
+
+.mobile-stack .mobile-full .rounded-xl { 
+	width: 100%; 
+	margin: 0; 
+}
+
+/* Tablet (> 720px) - Mobile First */
+@media (min-width: 721px) {
+	/* Reset mobile-specific styles for tablet+ */
+	.desktop-nav { 
+		display: block !important; 
+	}
+	
+	.mobile-nav { 
+		display: none !important; 
+	}
+	
+	.hamburger { 
+		display: none !important; 
+	}
 }
 
 /* Mobile overlay panel for hamburger menu */
