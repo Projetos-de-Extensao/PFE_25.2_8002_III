@@ -9,6 +9,8 @@ export default function Register(){
   const [confirmSenha, setConfirmSenha] = useState('')
   const [tipo, setTipo] = useState('aluno')
   const [disciplina, setDisciplina] = useState('')
+  const [disciplinas, setDisciplinas] = useState([])
+  const [newDisciplina, setNewDisciplina] = useState('')
   const navigate = useNavigate()
 
   const isConfirmTyped = confirmSenha.length > 0
@@ -22,7 +24,7 @@ export default function Register(){
     }
     // include disciplina only when professor
     const payload = { nome, email, senha, tipo }
-    if(tipo === 'professor') payload.disciplina = disciplina
+    if(tipo === 'professor') payload.disciplinas = disciplinas
     console.log('register', payload)
     alert('Cadastro submetido (demo)')
     // After successful registration (demo) go back to login
@@ -32,9 +34,9 @@ export default function Register(){
   return (
     <PageContainer>
       <div className="w-full max-w-md mx-auto">
-        <div className="bg-slate-700 p-8 sm:p-10 rounded-lg shadow-2xl">
+        <div className="rounded-xl border border-slate-700/60 bg-slate-800/60 p-8 sm:p-10 shadow-sm">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-white mb-2">Portal Monitor</h2>
+          <h2 className="text-3xl font-bold text-white mb-2 tracking-tight">Portal Monitor</h2>
           <p className="text-gray-300">Crie sua conta</p>
         </div>
 
@@ -47,7 +49,7 @@ export default function Register(){
                   <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                 </svg>
               </div>
-              <input id="nome" type="text" required value={nome} onChange={e=>setNome(e.target.value)} placeholder="Seu nome" className="w-full bg-[#2c3346] text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
+              <input id="nome" type="text" required value={nome} onChange={e=>setNome(e.target.value)} placeholder="Seu nome" className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm" />
             </div>
           </div>
 
@@ -60,7 +62,7 @@ export default function Register(){
                   <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
                 </svg>
               </div>
-              <input id="email" type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="nome@ibmec.com.br" className="w-full bg-[#2c3346] text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
+              <input id="email" type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="nome@ibmec.com.br" className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm" />
             </div>
           </div>
 
@@ -72,7 +74,7 @@ export default function Register(){
                   <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
                 </svg>
               </div>
-              <input id="senha" type="password" required value={senha} onChange={e=>setSenha(e.target.value)} placeholder="Crie uma senha forte (8-20 caracteres)" className="w-full bg-[#2c3346] text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
+              <input id="senha" type="password" required value={senha} onChange={e=>setSenha(e.target.value)} placeholder="Crie uma senha forte (8-20 caracteres)" className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm" />
             </div>
           </div>
 
@@ -84,7 +86,7 @@ export default function Register(){
                   <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
                 </svg>
               </div>
-              <input id="confirm-senha" type="password" required value={confirmSenha} onChange={e=>setConfirmSenha(e.target.value)} placeholder="Repita sua senha" className="w-full bg-[#2c3346] text-gray-100 border-0 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
+              <input id="confirm-senha" type="password" required value={confirmSenha} onChange={e=>setConfirmSenha(e.target.value)} placeholder="Repita sua senha" className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 pl-10 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm" />
             </div>
           </div>
 
@@ -103,15 +105,29 @@ export default function Register(){
 
             {tipo === 'professor' && (
               <div className="mt-4">
-                <label htmlFor="disciplina" className="block text-sm font-medium text-gray-300 mb-2">Título da disciplina</label>
-                <input id="disciplina" type="text" value={disciplina} onChange={e => setDisciplina(e.target.value)} placeholder="Ex: Cálculo I" className="w-full bg-[#2c3346] text-gray-100 border-0 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
-                <p className="text-xs text-gray-400 mt-1">Informe o nome da disciplina que você ministra (opcional).</p>
+                <label htmlFor="disciplina" className="block text-sm font-medium text-gray-300 mb-2">Disciplinas que ministra</label>
+                <div className="flex gap-2">
+                  <input id="disciplina" type="text" value={newDisciplina} onChange={e => setNewDisciplina(e.target.value)} placeholder="Ex: Cálculo I" className="flex-1 bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm" onKeyDown={e=>{ if(e.key=== 'Enter'){ e.preventDefault(); if(newDisciplina.trim()){ setDisciplinas(prev=>[...prev, newDisciplina.trim()]); setNewDisciplina('') } } }} />
+                  <button type="button" onClick={() => { if(newDisciplina.trim()){ setDisciplinas(prev=>[...prev, newDisciplina.trim()]); setNewDisciplina('') } }} className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition-shadow shadow-sm">Adicionar</button>
+                </div>
+
+                {disciplinas.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {disciplinas.map((d, i) => (
+                      <span key={i} className="inline-flex items-center gap-2 bg-slate-700/60 text-gray-100 px-3 py-1 rounded-full text-sm">
+                        <span>{d}</span>
+                        <button type="button" onClick={() => setDisciplinas(prev => prev.filter((_, idx) => idx !== i))} className="text-gray-300 hover:text-white">×</button>
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <p className="text-xs text-gray-400 mt-1">Adicione todas as disciplinas que você leciona. Pressione Enter ou clique em "Adicionar".</p>
               </div>
             )}
           </div>
 
           <div className="pt-2">
-            <button type="submit" className="w-full bg-yellow-400 text-gray-900 font-bold p-3 rounded-md hover:bg-yellow-300 transition-colors duration-300">Cadastrar</button>
+            <button type="submit" className="w-full bg-yellow-400 text-gray-900 font-bold p-3 rounded-md hover:bg-yellow-300 transition-colors duration-300 shadow-sm">Cadastrar</button>
           </div>
         </form>
 
