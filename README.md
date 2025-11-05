@@ -73,7 +73,6 @@ Siga os passos abaixo:
 
 4.  **Inicie o servidor de desenvolvimento:**
     ```bash
-    npm start
+    npm run dev
     ```
-A aplicação será aberta automaticamente em seu navegador no endereço `http://localhost:3000`.
-(Etapa 3 e 4 ainda não foi implementado.)
+A aplicação será aberta automaticamente em seu navegador no endereço `http://localhost:5173`.
