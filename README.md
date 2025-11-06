@@ -71,7 +71,7 @@ Se esses comandos não mostrarem versões, instale o Node antes de continuar.
 1. Clonar o repositório (ou baixar ZIP e extrair):
     ```powershell
     git clone https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III.git
-    cd PFE_25.2_8002_III
+    cd portal-monitor
     ```
 2. Instalar dependências (primeira vez):
     ```powershell
