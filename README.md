@@ -52,27 +52,101 @@ Este projeto foi construído com foco total no **front-end**, utilizando a bibli
 
 ## Instalação e Execução
 
-Para executar este projeto localmente, você precisará ter o [Node.js](https://nodejs.org/) (que inclui o npm) e o [Git](https://git-scm.com/) instalados em sua máquina.
+Esta seção foi pensada para alguém que nunca rodou um projeto React antes. Siga na ordem e você estará com o portal funcionando rapidamente.
 
-Siga os passos abaixo:
+### Pré-requisitos
+Você precisa ter instalado:
+1. Node.js (versão LTS recomendada 18+): https://nodejs.org/
+2. Git (para clonar o repositório) ou baixe o ZIP direto do GitHub: https://git-scm.com/
+3. (Opcional) Python 3.10+ e `pip` caso queira visualizar a documentação MkDocs local (`docs/`).
 
-1.  **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III](https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III)
-    ```
+Verifique se o Node está instalado:
+```powershell
+node -v
+npm -v
+```
+Se esses comandos não mostrarem versões, instale o Node antes de continuar.
 
-2.  **Navegue até o diretório do projeto:**
-    ```bash
+### Passo a passo rápido
+1. Clonar o repositório (ou baixar ZIP e extrair):
+    ```powershell
+    git clone https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III.git
     cd PFE_25.2_8002_III
     ```
-
-3.  **Instale as dependências:**
-    ```bash
+2. Instalar dependências (primeira vez):
+    ```powershell
     npm install
     ```
-
-4.  **Inicie o servidor de desenvolvimento:**
-    ```bash
+3. Rodar em modo de desenvolvimento (hot reload):
+    ```powershell
     npm run dev
     ```
-A aplicação será aberta automaticamente em seu navegador no endereço `http://localhost:5173`.
+    Abra (ou o navegador abrirá automaticamente) em: http://localhost:5173
+4. Criar uma conta de teste:
+    - Clique em "Cadastrar".
+    - Use um e-mail institucional válido para testar regras de perfil:
+      - Aluno: `seu_nome@alunos.ibmec.edu.br` (mostra campo Curso).
+      - Professor: `seu_nome@professores.ibmec.edu.br` (mostra campo Disciplinas).
+    - A autenticação e dados são simulados via `localStorage` (não há back-end real).
+5. Explorar vagas:
+    - Sem login você já vê a página pública de vagas.
+    - Para se candidatar, faça login ou registre-se; ao clicar em candidatar sem estar autenticado você será direcionado à tela de login.
+
+### Scripts adicionais úteis
+Produção (gera build otimizado em `dist/`):
+```powershell
+npm run build
+```
+Pré-visualizar o build de produção:
+```powershell
+npm run preview
+```
+
+### Documentação (MkDocs) opcional
+A pasta `docs/` contém material complementar. Para servir a documentação localmente:
+```powershell
+pip install mkdocs mkdocs-material
+mkdocs serve
+```
+Depois acesse: http://127.0.0.1:8000
+
+### Estrutura mínima esperada após instalar
+```
+PFE_25.2_8002_III/
+  node_modules/        (criado pelo npm install)
+  docs/                (documentação e artefatos de design)
+  prototype/           (HTML de protótipo inicial)
+  src/                 (se existir, código React principal)
+  README.md
+  package.json
+```
+
+### Solução de problemas comuns
+| Problema | Causa provável | Como resolver |
+|----------|----------------|---------------|
+| Porta já em uso | Outro processo usando 5173 | Feche o processo ou rode `npm run dev -- --port 5174` |
+| `node` não reconhecido | Node não instalado ou PATH incorreto | Reinstale Node LTS e reinicie o terminal |
+| Instalação lenta | Conexão ou cache corrompido | `npm cache verify` ou tente novamente mais tarde |
+| Navegador não abre | Auto-open falhou | Acesse manualmente http://localhost:5173 |
+| Mudanças não atualizam | Cache do navegador ou erro de build | Verifique terminal, recarregue, ou reinicie `npm run dev` |
+
+### Como contribuir rapidamente
+1. Crie um branch: `git checkout -b feat/nova-funcionalidade`
+2. Edite os componentes.
+3. Teste local (`npm run dev`).
+4. Commit: `git commit -m "feat: nova funcionalidade X"`
+5. Push: `git push origin feat/nova-funcionalidade`
+6. Abra um Pull Request no GitHub.
+
+### Limitações atuais
+O projeto não possui back-end real: todos os dados (usuário, vagas, candidaturas) são simulados em memória/localStorage apenas para demonstração. Não use dados sensíveis.
+
+### Resumo rápido (cola)
+```powershell
+git clone https://github.com/Projetos-de-Extensao/PFE_25.2_8002_III.git; cd PFE_25.2_8002_III
+npm install
+npm run dev
+# Abrir http://localhost:5173
+```
+
+Se tiver qualquer dúvida adicional, abra uma Issue no repositório.
