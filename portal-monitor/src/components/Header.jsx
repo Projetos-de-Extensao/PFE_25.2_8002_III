@@ -42,7 +42,7 @@ export default function Header() {
           <span className="text-lg sm:text-xl font-semibold tracking-tight text-white">Portal Monitor</span>
         </div>
 
-        {isAuthenticated && (
+        {isAuthenticated ? (
           <nav>
             {/* Desktop nav */}
             <div className="desktop-nav items-center gap-2">
@@ -156,6 +156,27 @@ export default function Header() {
                 </div>
               )}
             </div>
+          </nav>
+        ) : (
+          <nav className="flex items-center gap-2">
+            <Link
+              to="/"
+              className={`${navLinkBase} ${pathname === '/' ? navLinkActive : navLinkHover}`}
+            >
+              Vagas
+            </Link>
+            <Link
+              to="/login"
+              className={`${navLinkBase} ${pathname === '/login' ? navLinkActive : navLinkHover}`}
+            >
+              Entrar
+            </Link>
+            <Link
+              to="/register"
+              className={`${navLinkBase} ${pathname === '/register' ? navLinkActive : navLinkHover}`}
+            >
+              Cadastrar
+            </Link>
           </nav>
         )}
       </div>

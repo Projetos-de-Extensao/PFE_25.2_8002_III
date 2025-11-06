@@ -6,6 +6,7 @@ import PageContainer from '../components/PageContainer'
 export default function VagaDetailPage(){
   const { id } = useParams()
   const navigate = useNavigate()
+  const isAuthenticated = typeof window !== 'undefined' && window.localStorage.getItem('isAuthenticated') === 'true'
 
   const vaga = mockVagas.find(v => v.id === id) || mockVagas[0]
 
@@ -50,7 +51,15 @@ export default function VagaDetailPage(){
           </section>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <button onClick={() => navigate(`/vaga/${vaga.id}/apply`)} className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition shadow-sm flex-1 sm:flex-none sm:min-w-[160px]">Candidatar-se</button>
+            <button
+              onClick={() => {
+                if(isAuthenticated) navigate(`/vaga/${vaga.id}/apply`)
+                else navigate('/')
+              }}
+              className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition shadow-sm flex-1 sm:flex-none sm:min-w-[160px]"
+            >
+              Candidatar-se
+            </button>
             <button onClick={() => navigate(-1)} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm flex-1 sm:flex-none sm:min-w-[160px]">Voltar</button>
           </div>
         </div>

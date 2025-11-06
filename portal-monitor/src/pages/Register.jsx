@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import PageContainer from '../components/PageContainer'
 
@@ -7,24 +7,40 @@ export default function Register(){
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [confirmSenha, setConfirmSenha] = useState('')
-  const [tipo, setTipo] = useState('aluno')
-  const [disciplina, setDisciplina] = useState('')
+  // Infer tipo from email domain; additional fields appear only after passwords match
+  const [curso, setCurso] = useState('')
   const [disciplinas, setDisciplinas] = useState([])
   const [newDisciplina, setNewDisciplina] = useState('')
   const navigate = useNavigate()
 
+  const isStudentEmail = useMemo(() => /@alunos\.ibmec\.edu\.br$/i.test(email), [email])
+  const isProfessorEmail = useMemo(() => /@professores\.ibmec\.edu\.br$/i.test(email), [email])
   const isConfirmTyped = confirmSenha.length > 0
   const passwordsMatch = senha.length > 0 && confirmSenha.length > 0 && senha === confirmSenha
 
   function handleSubmit(e){
     e.preventDefault()
+    // Require password confirmation to proceed
     if(senha !== confirmSenha){
       alert('As senhas não coincidem')
       return
     }
-    // include disciplina only when professor
+    // Enforce allowed domains only
+    if(!isStudentEmail && !isProfessorEmail){
+      alert('Use um email institucional válido: @alunos.ibmec.edu.br ou @professores.ibmec.edu.br')
+      return
+    }
+    // Determine tipo based on email domain
+    const tipo = isProfessorEmail ? 'professor' : (isStudentEmail ? 'aluno' : 'aluno')
+    // Validate curso for student domain
+    if(tipo === 'aluno' && isStudentEmail && !curso.trim()){
+      alert('Por favor, informe o nome do seu curso.')
+      return
+    }
+    // include disciplinas when professor; include curso when aluno (student)
     const payload = { nome, email, senha, tipo }
     if(tipo === 'professor') payload.disciplinas = disciplinas
+    if(tipo === 'aluno' && isStudentEmail) payload.curso = curso.trim()
     console.log('register', payload)
     alert('Cadastro submetido (demo)')
     // After successful registration (demo) go back to login
@@ -78,6 +94,7 @@ export default function Register(){
             </div>
           </div>
 
+          {/* Confirmar Senha (re-adicionado). Não é necessário para exibir campos extras, mas é checado no envio. */}
           <div>
             <label htmlFor="confirm-senha" className="block text-sm font-medium text-gray-300 mb-2">Confirmar Senha</label>
             <div className="relative">
@@ -90,41 +107,36 @@ export default function Register(){
             </div>
           </div>
 
-          <div>
-            <span className="block text-sm font-medium text-gray-300 mb-3">Tipo de Usuário</span>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
-              <label className="flex items-center text-gray-200 cursor-pointer">
-                <input type="radio" name="tipo-usuario" value="aluno" checked={tipo==='aluno'} onChange={()=>setTipo('aluno')} className="custom-radio" />
-                <span className="text-sm">Aluno</span>
-              </label>
-              <label className="flex items-center text-gray-200 cursor-pointer">
-                <input type="radio" name="tipo-usuario" value="professor" checked={tipo==='professor'} onChange={()=>setTipo('professor')} className="custom-radio" />
-                <span className="text-sm">Professor</span>
-              </label>
+          {/* Conditional extra fields based on email domain; appear as soon as email matches */}
+          {isStudentEmail && (
+            <div>
+              <label htmlFor="curso" className="block text-sm font-medium text-gray-300 mb-2">Nome do Curso</label>
+              <input id="curso" type="text" value={curso} onChange={e=>setCurso(e.target.value)} placeholder="Ex: Ciência da Computação" className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-2.5 sm:p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm text-sm sm:text-base" required />
+              <p className="text-xs text-gray-400 mt-2 leading-relaxed">Detectamos um email de aluno. Informe seu curso.</p>
             </div>
+          )}
 
-            {tipo === 'professor' && (
-              <div className="mt-4">
-                <label htmlFor="disciplina" className="block text-sm font-medium text-gray-300 mb-2">Disciplinas que ministra</label>
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <input id="disciplina" type="text" value={newDisciplina} onChange={e => setNewDisciplina(e.target.value)} placeholder="Ex: Cálculo I" className="flex-1 bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-2.5 sm:p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm text-sm sm:text-base" onKeyDown={e=>{ if(e.key=== 'Enter'){ e.preventDefault(); if(newDisciplina.trim()){ setDisciplinas(prev=>[...prev, newDisciplina.trim()]); setNewDisciplina('') } } }} />
-                  <button type="button" onClick={() => { if(newDisciplina.trim()){ setDisciplinas(prev=>[...prev, newDisciplina.trim()]); setNewDisciplina('') } }} className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2.5 rounded-md hover:bg-yellow-300 transition-shadow shadow-sm text-sm sm:text-base whitespace-nowrap">Adicionar</button>
-                </div>
-
-                {disciplinas.length > 0 && (
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {disciplinas.map((d, i) => (
-                      <span key={i} className="inline-flex items-center gap-2 bg-slate-700/60 text-gray-100 px-3 py-1 rounded-full text-xs sm:text-sm">
-                        <span className="break-words">{d}</span>
-                        <button type="button" onClick={() => setDisciplinas(prev => prev.filter((_, idx) => idx !== i))} className="text-gray-300 hover:text-white text-base">×</button>
-                      </span>
-                    ))}
-                  </div>
-                )}
-                <p className="text-xs text-gray-400 mt-2 leading-relaxed">Adicione todas as disciplinas que você leciona. Pressione Enter ou clique em "Adicionar".</p>
+          {isProfessorEmail && (
+            <div>
+              <label htmlFor="disciplina" className="block text-sm font-medium text-gray-300 mb-2">Disciplinas que ministra</label>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input id="disciplina" type="text" value={newDisciplina} onChange={e => setNewDisciplina(e.target.value)} placeholder="Ex: Cálculo I" className="flex-1 bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-2.5 sm:p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm text-sm sm:text-base" onKeyDown={e=>{ if(e.key=== 'Enter'){ e.preventDefault(); if(newDisciplina.trim()){ setDisciplinas(prev=>[...prev, newDisciplina.trim()]); setNewDisciplina('') } } }} />
+                <button type="button" onClick={() => { if(newDisciplina.trim()){ setDisciplinas(prev=>[...prev, newDisciplina.trim()]); setNewDisciplina('') } }} className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2.5 rounded-md hover:bg-yellow-300 transition-shadow shadow-sm text-sm sm:text-base whitespace-nowrap">Adicionar</button>
               </div>
-            )}
-          </div>
+
+              {disciplinas.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {disciplinas.map((d, i) => (
+                    <span key={i} className="inline-flex items-center gap-2 bg-slate-700/60 text-gray-100 px-3 py-1 rounded-full text-xs sm:text-sm">
+                      <span className="break-words">{d}</span>
+                      <button type="button" onClick={() => setDisciplinas(prev => prev.filter((_, idx) => idx !== i))} className="text-gray-300 hover:text-white text-base">×</button>
+                    </span>
+                  ))}
+                </div>
+              )}
+              <p className="text-xs text-gray-400 mt-2 leading-relaxed">Detectamos um email de professor. Adicione as disciplinas que você leciona. Pressione Enter ou clique em "Adicionar".</p>
+            </div>
+          )}
 
           <div className="pt-2">
             <button type="submit" className="w-full bg-yellow-400 text-gray-900 font-bold p-3 rounded-md hover:bg-yellow-300 transition-colors duration-300 shadow-sm text-sm sm:text-base">Cadastrar</button>

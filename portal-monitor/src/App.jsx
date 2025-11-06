@@ -12,6 +12,7 @@ import ProfessorDashboard from './pages/ProfessorDashboard'
 import VagaApplicantsPage from './pages/VagaApplicantsPage'
 import StudentApplicationPage from './pages/StudentApplicationPage'
 import AdministratorDashboard from './pages/AdministratorDashboard'
+import PublicDashboard from './pages/PublicDashboard'
 
 export default function App() {
   return (
@@ -21,12 +22,15 @@ export default function App() {
         <main className="flex-grow p-4 sm:p-8 overflow-x-hidden">
           <div className="w-full max-w-6xl mx-auto overflow-x-hidden">
             <Routes>
-              <Route path="/" element={<Login />} />
+              {/* Public main page */}
+              <Route path="/" element={<PublicDashboard />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               
               {/* Student routes */}
               <Route path="/dashboard" element={<ProtectedRoute allowedTypes={['aluno']}><StudentDashboard /></ProtectedRoute>} />
-              <Route path="/vaga/:id" element={<ProtectedRoute allowedTypes={['aluno']}><VagaDetailPage /></ProtectedRoute>} />
+              {/* Vaga details are public; apply is protected below */}
+              <Route path="/vaga/:id" element={<VagaDetailPage />} />
               <Route path="/applications" element={<ProtectedRoute allowedTypes={['aluno']}><MyApplicationsPage /></ProtectedRoute>} />
               <Route path="/vaga/:id/apply" element={<ProtectedRoute allowedTypes={['aluno']}><StudentApplicationPage /></ProtectedRoute>} />
 

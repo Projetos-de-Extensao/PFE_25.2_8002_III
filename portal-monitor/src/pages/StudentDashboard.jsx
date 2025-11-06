@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import VagaCard from '../components/VagaCard'
-import CustomSelect from '../components/CustomSelect'
 import { Link } from 'react-router-dom'
 import { mockApplications, mockVagas } from '../data/mockData'
 
@@ -8,14 +7,6 @@ export default function StudentDashboard(){
   // Simple local state for search/filter inputs (static UI for RF04)
   const [query, setQuery] = useState('')
   const [filtroCurso, setFiltroCurso] = useState('')
-
-  const cursoOptions = [
-    { value: '', label: 'Todos os cursos' },
-    { value: 'Ciência da Computação', label: 'Ciência da Computação' },
-    { value: 'Sistemas de Informação', label: 'Sistemas de Informação' },
-    { value: 'Design e Web', label: 'Design e Web' },
-    { value: 'Engenharia', label: 'Engenharia' }
-  ]
 
   // For demo, do a basic client-side filter by title or curso
   const shown = mockVagas.filter(v => {
@@ -34,9 +25,9 @@ export default function StudentDashboard(){
     </div>
 
     {/* Applications vertical column placed to the right on md+ screens */}
-  <div className="mt-4 md:mt-0 md:ml-6 mobile-full">
+        <div className="mt-4 md:mt-0 md:ml-6">
           <div className="rounded-xl border border-slate-700/60 bg-slate-800/60 px-4 py-3 text-sm text-gray-200 shadow-sm">
-            <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center gap-2">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center justify-center gap-2">
               {(() => {
                 const apps = mockApplications
                 const total = apps.length
@@ -45,28 +36,28 @@ export default function StudentDashboard(){
                 const rejected = apps.filter(a => a.status === 'Rejeitado').length
                 return (
                   <>
-                        <a href={`/applications?status=${encodeURIComponent('Aceito')}`} className="inline-flex items-center justify-center w-full sm:w-44 px-3 py-2 rounded-md bg-green-500 text-black font-semibold shadow-sm hover:shadow">
+                        <a href={`/applications?status=${encodeURIComponent('Aceito')}`} className="inline-flex items-center justify-center w-44 px-3 py-2 rounded-md bg-green-500 text-black font-semibold shadow-sm hover:shadow">
                       <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                       </svg>
                       Aceitas: {accepted}
                     </a>
 
-                    <a href={`/applications?status=${encodeURIComponent('Em Análise')}`} className="inline-flex items-center justify-center w-full sm:w-44 px-3 py-2 rounded-md bg-orange-400 text-black font-semibold shadow-sm hover:shadow">
+                    <a href={`/applications?status=${encodeURIComponent('Em Análise')}`} className="inline-flex items-center justify-center w-44 px-3 py-2 rounded-md bg-orange-400 text-black font-semibold shadow-sm hover:shadow">
                       <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
                       </svg>
                       Em análise: {started}
                     </a>
 
-                    <a href={`/applications?status=${encodeURIComponent('Rejeitado')}`} className="inline-flex items-center justify-center w-full sm:w-44 px-3 py-2 rounded-md bg-red-500 text-black font-semibold shadow-sm hover:shadow">
+                    <a href={`/applications?status=${encodeURIComponent('Rejeitado')}`} className="inline-flex items-center justify-center w-44 px-3 py-2 rounded-md bg-red-500 text-black font-semibold shadow-sm hover:shadow">
                       <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
                       </svg>
                       Rejeitadas: {rejected}
                     </a>
 
-                    <Link to="/applications" className="inline-flex items-center justify-center w-full sm:w-44 px-3 py-2 rounded-md bg-slate-600 text-black font-semibold shadow-sm hover:shadow">
+                    <Link to="/applications" className="inline-flex items-center justify-center w-44 px-3 py-2 rounded-md bg-slate-600 text-black font-semibold shadow-sm hover:shadow">
                       <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1M16 7a4 4 0 11-8 0 4 4 0 018 0z" />
                       </svg>
@@ -88,22 +79,23 @@ export default function StudentDashboard(){
                     placeholder="Pesquisar por título ou curso"
                     value={query}
                     onChange={e=>setQuery(e.target.value)}
-                    className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-2.5 sm:p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm text-sm sm:text-base"
+                    className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm"
                   />
                 </div>
 
-                <div className="w-full sm:w-auto sm:min-w-[200px] sm:max-w-[280px]">
+                <div className="w-full sm:w-64">
                   <label className="sr-only">Filtrar por curso</label>
-                  <CustomSelect
-                    value={filtroCurso}
-                    onChange={setFiltroCurso}
-                    options={cursoOptions}
-                    placeholder="Todos os cursos"
-                  />
+                  <select value={filtroCurso} onChange={e=>setFiltroCurso(e.target.value)} className="w-full bg-[#2c3346] text-gray-100 border border-slate-700/60 rounded-md p-3 focus:ring-2 focus:ring-yellow-400 focus:outline-none shadow-sm">
+                    <option value="">Todos os cursos</option>
+                    <option value="Ciência da Computação">Ciência da Computação</option>
+                    <option value="Sistemas de Informação">Sistemas de Informação</option>
+                    <option value="Design e Web">Design e Web</option>
+                    <option value="Engenharia">Engenharia</option>
+                  </select>
                 </div>
 
-                <div className="flex-none w-full sm:w-auto">
-                  <button onClick={()=>{setQuery(''); setFiltroCurso('')}} className="w-full sm:w-auto bg-slate-600 hover:bg-slate-500 text-gray-100 px-5 py-2.5 sm:py-3 rounded-md shadow-sm text-sm sm:text-base">Limpar</button>
+                <div className="flex-none">
+                  <button onClick={()=>{setQuery(''); setFiltroCurso('')}} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm">Limpar</button>
                 </div>
               </div>
             </div>
