@@ -230,7 +230,7 @@ header nav {
 	position: fixed;
 	inset: 0;
 	height: 100vh;
-	background: #ffffff !important;
+	background: #0f1724  !important;
 	z-index: 9999 !important;
 	display: flex;
 	flex-direction: column;
@@ -276,8 +276,8 @@ header nav {
 .hamburger svg { color: #fff }
 
 /* make sure overlay text and links use dark color for readability */
-.mobile-overlay, .mobile-overlay *{ color: #0f1724 !important }
-.mobile-overlay a, .mobile-overlay button{ color: #0f1724 !important }
+.mobile-overlay, .mobile-overlay *{ color: #ffffff !important }
+.mobile-overlay a, .mobile-overlay button{ color: #ffffff !important }
 
 /* Hide mobile nav container by default on larger screens */
 .mobile-nav { display: none; }

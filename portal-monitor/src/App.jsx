@@ -13,6 +13,8 @@ import VagaApplicantsPage from './pages/VagaApplicantsPage'
 import StudentApplicationPage from './pages/StudentApplicationPage'
 import AdministratorDashboard from './pages/AdministratorDashboard'
 import PublicDashboard from './pages/PublicDashboard'
+import CreateVagaPage from './pages/CreateVagaPage'
+import AdminUserDetailPage from './pages/AdminUserDetailPage'
 
 export default function App() {
   return (
@@ -40,6 +42,12 @@ export default function App() {
               
               {/* Admin route */}
               <Route path="/admin" element={<ProtectedRoute allowedTypes={['admin']}><AdministratorDashboard /></ProtectedRoute>} />
+              <Route path="/admin/vagas/novo" element={<ProtectedRoute allowedTypes={['admin']}><CreateVagaPage mode="create" /></ProtectedRoute>} />
+              <Route path="/admin/vagas/:id/editar" element={<ProtectedRoute allowedTypes={['admin']}><CreateVagaPage mode="edit" /></ProtectedRoute>} />
+              <Route path="/admin/users/:id" element={<ProtectedRoute allowedTypes={['admin']}><AdminUserDetailPage /></ProtectedRoute>} />
+
+              {/* Fallback: any unknown route shows the public dashboard */}
+              <Route path="*" element={<PublicDashboard />} />
             </Routes>
           </div>
         </main>

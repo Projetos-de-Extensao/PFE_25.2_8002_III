@@ -7,6 +7,9 @@ export default function VagaDetailPage(){
   const { id } = useParams()
   const navigate = useNavigate()
   const isAuthenticated = typeof window !== 'undefined' && window.localStorage.getItem('isAuthenticated') === 'true'
+  const userType = typeof window !== 'undefined' ? window.localStorage.getItem('userType') : null
+  const isAdmin = isAuthenticated && userType === 'admin'
+  const isAluno = isAuthenticated && userType === 'aluno'
 
   const vaga = mockVagas.find(v => v.id === id) || mockVagas[0]
 
@@ -15,7 +18,7 @@ export default function VagaDetailPage(){
       <div className="w-full max-w-4xl mx-auto">
         <div className="rounded-xl border border-slate-700/60 bg-slate-800/60 p-8 shadow-sm">
           <div className="mb-4 text-sm">
-            <Link to="/dashboard" className="text-blue-300 hover:underline">← Voltar às vagas</Link>
+            <Link to="/" className="text-blue-300 hover:underline">← Voltar às vagas</Link>
           </div>
           <div className="mb-6">
             <h1 className="text-3xl font-bold text-white tracking-tight">{vaga.titulo}</h1>
@@ -51,16 +54,36 @@ export default function VagaDetailPage(){
           </section>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <button
-              onClick={() => {
-                if(isAuthenticated) navigate(`/vaga/${vaga.id}/apply`)
-                else navigate('/')
-              }}
-              className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition shadow-sm flex-1 sm:flex-none sm:min-w-[160px]"
-            >
-              Candidatar-se
-            </button>
+            {isAluno && (
+              <button
+                onClick={() => navigate(`/vaga/${vaga.id}/apply`)}
+                className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition shadow-sm flex-1 sm:flex-none sm:min-w-[160px]"
+              >
+                Candidatar-se
+              </button>
+            )}
             <button onClick={() => navigate(-1)} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm flex-1 sm:flex-none sm:min-w-[160px]">Voltar</button>
+            {isAdmin && (
+              <>
+                <button
+                  onClick={() => navigate(`/admin/vagas/${vaga.id}/editar`)}
+                  className="bg-amber-500 hover:bg-amber-400 text-white px-4 py-2 rounded-md shadow-sm flex-1 sm:flex-none sm:min-w-[160px]"
+                >
+                  Editar Vaga
+                </button>
+                <button
+                  onClick={() => {
+                    if(window.confirm('Remover vaga? Esta ação é simulada.')){
+                      alert(`Vaga ${vaga.id} removida (simulado)`) 
+                      navigate('/admin')
+                    }
+                  }}
+                  className="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded-md shadow-sm flex-1 sm:flex-none sm:min-w-[160px]"
+                >
+                  Remover Vaga
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>
