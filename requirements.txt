@@ -77,7 +77,7 @@ Pygments==2.19.1
 pymdown-extensions==10.15
 pyphen==0.17.2
 python-dateutil==2.9.0.post0
-pywin32==310
+pywin32==310; sys_platform == "win32"
 PyYAML==6.0.2
 pyyaml_env_tag==1.1
 pyzmq==26.4.0
@@ -100,3 +100,4 @@ wcwidth==0.2.13
 weasyprint==62.3
 webencodings==0.5.1
 zopfli==0.2.3.post1
+
