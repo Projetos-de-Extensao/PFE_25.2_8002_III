@@ -13,8 +13,8 @@ O **Portal Monitor** é uma aplicação web front-end desenvolvida para a discip
 
 A solução conecta três perfis de usuários:
 * **Alunos:** Que podem buscar, visualizar e se candidatar a vagas de monitoria.
-* **Professores:** Que podem publicar e gerenciar suas vagas, além de selecionar os candidatos.
-* **Administradores (CASA):** Que possuem uma visão geral do programa através de um dashboard com estatísticas.
+* **Professores:** Que podem gerenciar suas vagas, além de selecionar os candidatos.
+* **Administradores (CASA):** Que possuem uma visão geral do programa através de um dashboard com estatísticas e publicar vagas.
 
 Este projeto foi construído com foco total no **front-end**, utilizando a biblioteca React para criar uma interface de usuário rica e interativa, com um back-end simulado para fins de demonstração.
 
