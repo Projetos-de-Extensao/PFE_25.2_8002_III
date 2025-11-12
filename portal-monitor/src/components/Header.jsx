@@ -38,7 +38,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 w-full border-b border-slate-700/60 bg-gradient-to-r from-slate-900 to-slate-800/95 backdrop-blur">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/assets/ibmec_logo_bg.png" alt="logo" className="h-8 w-auto object-contain" />
+          <img src="/assets/logoibmecbranco-Copia.png" alt="logo" className="h-8 w-auto object-contain" />
           <span className="text-lg sm:text-xl font-semibold tracking-tight text-white">Portal Monitor</span>
         </div>
 

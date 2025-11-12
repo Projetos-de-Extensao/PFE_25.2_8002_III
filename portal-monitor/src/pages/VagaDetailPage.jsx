@@ -10,6 +10,16 @@ export default function VagaDetailPage(){
   const userType = typeof window !== 'undefined' ? window.localStorage.getItem('userType') : null
   const isAdmin = isAuthenticated && userType === 'admin'
   const isAluno = isAuthenticated && userType === 'aluno'
+  const canApply = isAluno || !isAuthenticated
+
+  const handleApplyClick = () => {
+    if(!isAuthenticated){
+      navigate('/login')
+      return
+    }
+
+    navigate(`/vaga/${vaga.id}/apply`)
+  }
 
   const vaga = mockVagas.find(v => v.id === id) || mockVagas[0]
 
@@ -54,9 +64,9 @@ export default function VagaDetailPage(){
           </section>
 
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            {isAluno && (
+            {canApply && (
               <button
-                onClick={() => navigate(`/vaga/${vaga.id}/apply`)}
+                onClick={handleApplyClick}
                 className="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-md hover:bg-yellow-300 transition shadow-sm flex-1 sm:flex-none sm:min-w-[160px]"
               >
                 Candidatar-se

@@ -8,6 +8,9 @@
 | 202503798371 | Victor Robson               |
 | 202508486083 | Matheus Oliveira            |
 
+##
+Visita o site: https://pfe-25-2-8002-iii.vercel.app
+
 ## Sobre o Projeto
 O **Portal Monitor** é uma aplicação web front-end desenvolvida para a disciplina de Projeto da CASA. O objetivo é criar uma plataforma centralizada e moderna para gerenciar o processo de seleção de monitores acadêmicos.
 
