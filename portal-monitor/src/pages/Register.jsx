@@ -49,8 +49,8 @@ export default function Register(){
 
   return (
     <PageContainer>
-      <div className="w-full max-w-none sm:max-w-md mx-auto">
-        <div className="rounded-none sm:rounded-xl border-0 sm:border border-slate-700/60 bg-slate-800/60 p-6 sm:p-8 md:p-10 shadow-sm">
+  <div className="w-full max-w-none sm:max-w-xl mx-auto">
+  <div className="rounded-xl sm:rounded-2xl border-0 sm:border border-slate-700/60 bg-slate-800/60 p-6 sm:p-8 md:p-10 shadow-sm">
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">Portal Monitor</h2>
           <p className="text-sm sm:text-base text-gray-300">Crie sua conta</p>

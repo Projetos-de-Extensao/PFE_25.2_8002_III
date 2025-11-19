@@ -25,7 +25,7 @@ export default function CreateVagaPage({ mode }){
   return (
     <PageContainer>
       <div className="w-full max-w-none md:max-w-3xl mx-auto space-y-4 sm:space-y-6">
-        <div className="rounded-none md:rounded-xl border-0 md:border border-slate-700/60 bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
+  <div className="rounded-xl md:rounded-2xl border-0 md:border border-slate-700/60 bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
           <h1 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2 tracking-tight">
             {isEdit ? 'Editar Vaga' : 'Criar Nova Vaga'}
           </h1>

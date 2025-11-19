@@ -14,15 +14,16 @@ export default function AdministratorDashboard(){
   const totalProfessores = mockUsers.filter(u => u.role === 'Professor').length
   const totalCandidaturas = mockApplications.length
 
-  const filteredUsers = userFilter === 'Todos' 
-    ? mockUsers 
-    : mockUsers.filter(user => user.role === userFilter)
+  const filteredUsers = mockUsers.filter(user => {
+    if(user.role === 'Administrador') return false
+    if(userFilter === 'Todos') return true
+    return user.role === userFilter
+  })
 
   const userFilterOptions = [
     { value: 'Todos', label: 'Todos' },
     { value: 'Aluno', label: 'Alunos' },
     { value: 'Professor', label: 'Professores' },
-    { value: 'Administrador', label: 'Administradores' }
   ]
   
   return (
@@ -69,7 +70,7 @@ export default function AdministratorDashboard(){
         </div>
 
         {/* Painel de Vagas (Resumo) */}
-        <div className="rounded-none md:rounded-xl border-0 md:border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
+  <div className="rounded-xl md:rounded-2xl border-0 md:border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
           <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 tracking-tight">Painel do Administrador</h1>
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-5 sm:mb-6 leading-relaxed">Gerencie vagas, usuários e acompanhe as estatísticas do sistema.</p>
 
@@ -100,7 +101,7 @@ export default function AdministratorDashboard(){
         </div>
 
         {/* Painel de Usuários (Resumo) */}
-        <div className="rounded-none md:rounded-xl border-0 md:border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
+  <div className="rounded-xl md:rounded-2xl border-0 md:border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
             <h2 className="text-base sm:text-lg font-semibold text-slate-900 dark:text-white">Gerenciar Usuários</h2>
             <div className="w-full sm:w-56">

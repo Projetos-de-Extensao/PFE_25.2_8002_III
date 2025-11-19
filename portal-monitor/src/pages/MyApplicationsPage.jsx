@@ -46,7 +46,7 @@ export default function MyApplicationsPage(){
   return (
     <PageContainer>
       <div className="w-full max-w-none md:max-w-4xl mx-auto">
-        <div className="rounded-none md:rounded-xl border-0 md:border border-slate-700/60 bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
+  <div className="rounded-xl md:rounded-2xl border-0 md:border border-slate-700/60 bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
         <h1 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-5 tracking-tight">Minhas Candidaturas</h1>
 
         <div className="mb-4 sm:mb-5 text-sm text-gray-300 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">

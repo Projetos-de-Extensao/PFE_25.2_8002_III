@@ -56,7 +56,7 @@ export default function AdminUserDetailPage(){
   return (
     <PageContainer>
       <div className="w-full max-w-none md:max-w-3xl mx-auto space-y-4 sm:space-y-6">
-        <div className="rounded-none md:rounded-xl border-0 md:border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
+  <div className="rounded-xl md:rounded-2xl border-0 md:border border-slate-200 dark:border-slate-700/60 bg-white dark:bg-slate-800/60 p-4 sm:p-6 md:p-8 shadow-sm">
           
           <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1 sm:mb-2 tracking-tight">Detalhes do Usuário</h1>
           

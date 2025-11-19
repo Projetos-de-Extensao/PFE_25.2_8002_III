@@ -65,9 +65,9 @@ export default function AdminVagasPage() {
             {/* 1. Campo de Busca por Título */}
             <div className="flex-1 min-w-[200px]">
                 <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1 uppercase">Buscar Vaga</label>
-                <div className="relative">
-                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pr-2 text-gray-400 pointer-events-none z-10">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </div>
@@ -76,7 +76,7 @@ export default function AdminVagasPage() {
                         placeholder="Ex: Monitor de Algoritmos..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        className="input-bg w-full border border-slate-200 dark:border-slate-600 rounded-lg py-2.5 pl-10 pr-3 text-slate-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+            className="input-bg w-full border border-slate-200 dark:border-slate-600 rounded-lg py-2.5 pl-11 pr-3 text-slate-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                     />
                 </div>
             </div>

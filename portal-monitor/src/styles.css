@@ -125,9 +125,7 @@ select option:focus {
 	flex-direction: column; 
 }
 
-.mobile-stack .items-center { 
-	align-items: flex-start; 
-}
+
 
 .mobile-stack .justify-between { 
 	justify-content: flex-start; 
@@ -179,15 +177,15 @@ header nav {
 
 /* Mobile: expand central panels for better readability */
 .mobile-stack .mobile-full { 
-	width: calc(100% - 2rem); 
-	margin-left: 1rem; 
-	margin-right: 1rem; 
+	width: calc(100% - 0.5rem); 
+	margin-left: 0.15rem; 
+	margin-right: 0.15rem; 
 }
 
 .mobile-stack .rounded-xl { 
-	width: calc(100% - 2rem); 
-	margin-left: 1rem; 
-	margin-right: 1rem; 
+	width: calc(100% - 0.5rem); 
+	margin-left: 0.15rem; 
+	margin-right: 0.15rem; 
 }
 
 .mobile-stack .mobile-full .rounded-xl { 

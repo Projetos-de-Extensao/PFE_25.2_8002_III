@@ -2,33 +2,58 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import PageContainer from '../components/PageContainer'
 
+const DEV_ACCOUNTS = [
+  {
+    label: 'Administrador',
+    email: 'admin@admin.ibmec.edu.br',
+    password: 'admin',
+    type: 'admin',
+    redirect: '/admin'
+  },
+  {
+    label: 'Professor',
+    email: 'prof@professor.ibmec.edu.br',
+    password: 'professor',
+    type: 'professor',
+    redirect: '/professor'
+  },
+  {
+    label: 'Aluno',
+    email: 'aluno@aluno.ibmec.edu.br',
+    password: 'aluno',
+    type: 'aluno',
+    redirect: '/dashboard'
+  }
+]
+
 export default function Login(){
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
-  const [tipoUsuario, setTipoUsuario] = useState('aluno')
+  const [error, setError] = useState('')
 
   function handleSubmit(e){
     e.preventDefault()
-    // Save auth to localStorage
-    localStorage.setItem('isAuthenticated', 'true')
-    localStorage.setItem('userType', tipoUsuario)
-    localStorage.setItem('userEmail', email)
-    
-    // Redirect based on user type
-    if(tipoUsuario === 'aluno'){
-      navigate('/dashboard')
-    } else if(tipoUsuario === 'professor'){
-      navigate('/professor')
-    } else if(tipoUsuario === 'admin'){
-      navigate('/admin')
+    const trimmedEmail = email.trim().toLowerCase()
+    const matchedAccount = DEV_ACCOUNTS.find(account => account.email === trimmedEmail && account.password === senha)
+
+    if(!matchedAccount){
+      setError('Credenciais inválidas. Utilize um dos logins de desenvolvimento listados abaixo.')
+      return
     }
+
+    localStorage.setItem('isAuthenticated', 'true')
+    localStorage.setItem('userType', matchedAccount.type)
+    localStorage.setItem('userEmail', matchedAccount.email)
+    setError('')
+
+    navigate(matchedAccount.redirect)
   }
 
   return (
     <PageContainer>
-      <div className="w-full max-w-none sm:max-w-md mx-auto">
-        <div className="rounded-none sm:rounded-xl border-0 sm:border border-slate-700/60 bg-slate-800/60 p-6 sm:p-8 md:p-10 shadow-sm">
+  <div className="w-full max-w-none sm:max-w-xl mx-auto">
+  <div className="rounded-xl sm:rounded-2xl border-0 sm:border border-slate-700/60 bg-slate-800/60 p-6 sm:p-8 md:p-10 shadow-sm">
         <div className="text-center mb-6 sm:mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 tracking-tight">Portal Monitor</h2>
           <p className="text-sm sm:text-base text-gray-300">Acesse sua conta</p>
@@ -76,49 +101,28 @@ export default function Login(){
             </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-3">Tipo de Usuário</label>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <label className="flex items-center cursor-pointer">
-                <input
-                  type="radio"
-                  name="tipoUsuario"
-                  value="aluno"
-                  checked={tipoUsuario === 'aluno'}
-                  onChange={(e) => setTipoUsuario(e.target.value)}
-                  className="custom-radio"
-                />
-                <span className="text-sm text-gray-300">Aluno</span>
-              </label>
-              <label className="flex items-center cursor-pointer">
-                <input
-                  type="radio"
-                  name="tipoUsuario"
-                  value="professor"
-                  checked={tipoUsuario === 'professor'}
-                  onChange={(e) => setTipoUsuario(e.target.value)}
-                  className="custom-radio"
-                />
-                <span className="text-sm text-gray-300">Professor</span>
-              </label>
-              <label className="flex items-center cursor-pointer">
-                <input
-                  type="radio"
-                  name="tipoUsuario"
-                  value="admin"
-                  checked={tipoUsuario === 'admin'}
-                  onChange={(e) => setTipoUsuario(e.target.value)}
-                  className="custom-radio"
-                />
-                <span className="text-sm text-gray-300">Administrador</span>
-              </label>
+          {error && (
+            <div className="rounded-md border border-red-500/60 bg-red-500/10 text-red-300 text-sm px-4 py-3">
+              {error}
             </div>
-          </div>
+          )}
 
           <div>
             <button type="submit" className="w-full bg-yellow-400 text-gray-900 font-bold p-3 rounded-md hover:bg-yellow-300 transition-colors duration-300 shadow-sm text-sm sm:text-base">Entrar</button>
           </div>
         </form>
+
+        <div className="mt-6 sm:mt-7 rounded-lg border border-slate-700/60 bg-slate-900/40 p-4">
+          <p className="text-xs uppercase tracking-wide text-gray-400 mb-2">Logins de desenvolvimento disponíveis</p>
+          <ul className="space-y-2 text-sm text-gray-200">
+            {DEV_ACCOUNTS.map(account => (
+              <li key={account.email} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                <span className="font-semibold text-white">{account.label}</span>
+                <span className="text-gray-300 font-mono text-xs sm:text-sm break-all">{account.email} • senha: {account.password}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="text-center mt-5 sm:mt-6">
           <p className="text-sm text-gray-300">Não tem conta? <Link to="/register" className="font-medium text-blue-400 hover:text-blue-300">Cadastre-se</Link></p>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { mockVagas } from '../data/mockData'
+import { mockVagas, mockApplications } from '../data/mockData'
 import PageContainer from '../components/PageContainer'
 
 export default function VagaDetailPage(){
@@ -8,9 +8,35 @@ export default function VagaDetailPage(){
   const navigate = useNavigate()
   const isAuthenticated = typeof window !== 'undefined' && window.localStorage.getItem('isAuthenticated') === 'true'
   const userType = typeof window !== 'undefined' ? window.localStorage.getItem('userType') : null
+  const userEmail = typeof window !== 'undefined' ? window.localStorage.getItem('userEmail') : null
   const isAdmin = isAuthenticated && userType === 'admin'
   const isAluno = isAuthenticated && userType === 'aluno'
-  const canApply = isAluno || !isAuthenticated
+
+  const readDemoApplicants = () => {
+    if(typeof window === 'undefined') return []
+    try {
+      const raw = window.localStorage.getItem('demoApplicants')
+      return raw ? JSON.parse(raw) : []
+    } catch (error){
+      console.warn('Erro ao ler demoApplicants:', error)
+      return []
+    }
+  }
+
+  const normalizedEmail = userEmail ? userEmail.toLowerCase() : null
+
+  const hasMockApplication = Boolean(
+    isAluno && normalizedEmail &&
+    mockApplications.some(app => app.vagaId === id && app.studentEmail?.toLowerCase() === normalizedEmail)
+  )
+
+  const hasDemoApplication = Boolean(
+    isAluno && normalizedEmail &&
+    readDemoApplicants().some(app => app.vagaId === id && app.email?.toLowerCase() === normalizedEmail)
+  )
+
+  const hasApplied = hasMockApplication || hasDemoApplication
+  const canApply = (!hasApplied && isAluno) || !isAuthenticated
 
   const handleApplyClick = () => {
     if(!isAuthenticated){
@@ -71,6 +97,11 @@ export default function VagaDetailPage(){
               >
                 Candidatar-se
               </button>
+            )}
+            {isAluno && hasApplied && (
+              <div className="flex-1 text-sm text-green-300">
+                Você já se candidatou a esta vaga.
+              </div>
             )}
             <button onClick={() => navigate(-1)} className="bg-slate-600 hover:bg-slate-500 text-gray-100 px-4 py-2 rounded-md shadow-sm flex-1 sm:flex-none sm:min-w-[160px]">Voltar</button>
             {isAdmin && (
