@@ -13,23 +13,29 @@ export default function AdminUsersListPage() {
   
   // Estados dos filtros
   const [userFilter, setUserFilter] = useState(initialRole)
-  const [searchQuery, setSearchQuery] = useState('') // Novo estado para a busca por nome
+  const [courseFilter, setCourseFilter] = useState('') // NOVO: Filtro de Curso
+  const [searchQuery, setSearchQuery] = useState('')
 
-  // Atualiza a URL quando o filtro de papel muda
+  // Atualiza a URL quando o filtro de papel muda e reseta o curso se não for aluno
   useEffect(() => {
     setSearchParams(userFilter === 'Todos' ? {} : { role: userFilter })
+    if (userFilter !== 'Aluno') {
+      setCourseFilter('') // Reseta filtro de curso se mudar para Professor/Admin
+    }
   }, [userFilter, setSearchParams])
 
-  // Lógica de Filtragem Combinada (Papel + Nome)
+  // Lógica de Filtragem Combinada
   const filteredUsers = mockUsers.filter(user => {
     // 1. Verifica o papel (Role)
     const matchesRole = userFilter === 'Todos' || user.role === userFilter
     
-    // 2. Verifica o nome (busca textual case-insensitive)
+    // 2. Verifica o nome (busca textual)
     const matchesName = user.name.toLowerCase().includes(searchQuery.toLowerCase())
 
-    // Retorna verdadeiro apenas se passar nos dois critérios
-    return matchesRole && matchesName
+    // 3. Verifica o Curso (Apenas se o filtro de curso estiver ativo)
+    const matchesCourse = courseFilter === '' || (user.curso && user.curso === courseFilter)
+
+    return matchesRole && matchesName && matchesCourse
   })
 
   const userFilterOptions = [
@@ -37,6 +43,15 @@ export default function AdminUsersListPage() {
     { value: 'Aluno', label: 'Alunos' },
     { value: 'Professor', label: 'Professores' },
     { value: 'Administrador', label: 'Administradores' }
+  ]
+
+  // NOVO: Opções de Curso
+  const courseOptions = [
+    { value: '', label: 'Todos os Cursos' },
+    { value: 'Ciência da Computação', label: 'Ciência da Computação' },
+    { value: 'Sistemas de Informação', label: 'Sistemas de Informação' },
+    { value: 'Design e Web', label: 'Design e Web' },
+    { value: 'Engenharia', label: 'Engenharia' }
   ]
 
   return (
@@ -68,14 +83,26 @@ export default function AdminUsersListPage() {
             </div>
 
             {/* 2. Select de Filtro por Papel */}
-            <div className="w-full md:w-64">
+            <div className="w-full md:w-56">
                <CustomSelect 
                   value={userFilter}
                   onChange={setUserFilter}
                   options={userFilterOptions}
-                  placeholder="Filtrar por..."
+                  placeholder="Tipo de Usuário"
                />
             </div>
+
+            {/* 3. NOVO: Select de Filtro por Curso (Só aparece se 'Aluno' estiver selecionado) */}
+            {userFilter === 'Aluno' && (
+                <div className="w-full md:w-56">
+                  <CustomSelect 
+                      value={courseFilter}
+                      onChange={setCourseFilter}
+                      options={courseOptions}
+                      placeholder="Filtrar por Curso"
+                  />
+                </div>
+            )}
           </div>
 
           {/* Lista de Usuários */}
@@ -84,9 +111,9 @@ export default function AdminUsersListPage() {
                 filteredUsers.map(user => (
                 <div key={user.id} className="rounded-lg border border-slate-200 dark:border-slate-700/60 bg-slate-50 dark:bg-slate-700/40 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-slate-300 dark:hover:border-slate-500 transition-colors">
                     <div className="flex-1">
-                        {/* Destaque do nome */}
                         <div className="font-bold text-slate-900 dark:text-white text-lg">{user.name}</div>
-                        <div className="flex items-center gap-2 mt-1">
+                        <div className="flex flex-wrap items-center gap-2 mt-1">
+                           {/* Badge do Papel */}
                            <span className={`px-2 py-0.5 rounded-full text-xs font-medium border ${
                                user.role === 'Administrador' ? 'bg-purple-100 text-purple-700 border-purple-200 dark:bg-purple-900/30 dark:text-purple-300 dark:border-purple-800' :
                                user.role === 'Professor' ? 'bg-emerald-100 text-emerald-700 border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800' :
@@ -94,11 +121,20 @@ export default function AdminUsersListPage() {
                            }`}>
                              {user.role}
                            </span>
+                           
+                           {/* NOVO: Badge do Curso (Só aparece se o usuário tiver curso) */}
+                           {user.curso && (
+                             <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-slate-200 text-slate-700 border border-slate-300 dark:bg-slate-600 dark:text-slate-200 dark:border-slate-500">
+                               {user.curso}
+                             </span>
+                           )}
+
+                           <span className="text-sm text-gray-500 dark:text-gray-400 hidden sm:inline">•</span>
                            <span className="text-sm text-gray-500 dark:text-gray-400">{user.email}</span>
                         </div>
                     </div>
                     <div>
-                      <button onClick={() => navigate(`/admin/users/${user.id}`)} className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 dark:bg-slate-600 dark:hover:bg-slate-500 dark:text-white dark:border-slate-500 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm">
+                      <button onClick={() => navigate(`/admin/users/${user.id}`)} className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 dark:bg-slate-600 dark:hover:bg-slate-500 dark:text-white dark:border-slate-500 px-4 py-2 rounded-md text-sm font-medium transition-colors shadow-sm w-full sm:w-auto">
                         Ver Detalhes
                       </button>
                     </div>
@@ -110,10 +146,11 @@ export default function AdminUsersListPage() {
                     Nenhum usuário encontrado. 
                     {searchQuery && <span> Busca: "<strong>{searchQuery}</strong>"</span>}
                     {userFilter !== 'Todos' && <span> Filtro: <strong>{userFilter}</strong></span>}
+                    {courseFilter && <span> Curso: <strong>{courseFilter}</strong></span>}
                   </p>
-                  {(searchQuery || userFilter !== 'Todos') && (
+                  {(searchQuery || userFilter !== 'Todos' || courseFilter) && (
                       <button 
-                        onClick={() => { setSearchQuery(''); setUserFilter('Todos'); }}
+                        onClick={() => { setSearchQuery(''); setUserFilter('Todos'); setCourseFilter(''); }}
                         className="mt-2 text-blue-600 dark:text-blue-400 hover:underline text-sm"
                       >
                         Limpar todos os filtros

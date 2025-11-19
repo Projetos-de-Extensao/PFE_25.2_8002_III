@@ -6,7 +6,8 @@ export const mockVagas = [
     curso: 'Ciência da Computação',
     professor: 'Dr. Silva',
     descricao: 'Durante o horário de almoço, realize uma sessão de ajuda/estudo duas vezes por semana para auxiliar os alunos com as tarefas da disciplina e responder a quaisquer perguntas.',
-    tags: ['Algoritmos', 'Java', 'Aulas']
+    tags: ['Algoritmos', 'Java', 'Aulas'],
+    vagas: 2
   },
   {
     id: 'v2',
@@ -14,7 +15,8 @@ export const mockVagas = [
     curso: 'Sistemas de Informação',
     professor: 'Profa. Almeida',
     descricao: 'Durante o horário de almoço, realize uma sessão de ajuda/estudo duas vezes por semana para auxiliar os alunos com as tarefas da disciplina e responder a quaisquer perguntas.',
-    tags: ['SQL', 'Postgres', 'Lab']
+    tags: ['SQL', 'Postgres', 'Lab'],
+    vagas: 1
   },
   {
     id: 'v3',
@@ -22,7 +24,8 @@ export const mockVagas = [
     curso: 'Design e Web',
     professor: 'Prof. Costa',
     descricao: 'Durante o horário de almoço, realize uma sessão de ajuda/estudo duas vezes por semana para auxiliar os alunos com as tarefas da disciplina e responder a quaisquer perguntas.',
-    tags: ['React', 'CSS', 'UI']
+    tags: ['React', 'CSS', 'UI'],
+    vagas: 3
   },
   {
     id: 'v4',
@@ -30,7 +33,8 @@ export const mockVagas = [
     curso: 'Engenharia',
     professor: 'Dr. Pereira',
     descricao: 'Durante o horário de almoço, realize uma sessão de ajuda/estudo duas vezes por semana para auxiliar os alunos com as tarefas da disciplina e responder a quaisquer perguntas.',
-    tags: ['Matemática', 'Teoria', 'Provas']
+    tags: ['Matemática', 'Teoria', 'Provas'],
+    vagas: 1
   },
   {
     id: 'v5',
@@ -49,17 +53,16 @@ export const mockApplications = [
   { id: 'a4', vagaId: 'v3', vaga: 'Monitor de Front-end', status: 'Em Análise', professor: 'Prof. Costa' }
 ]
 
-// Mock users global para cálculos de estatísticas
+// MODIFICAÇÃO: Adicionado campo 'curso' para os Alunos
 export const mockUsers = [
-  { id: 'u1', name: 'João Silva', role: 'Aluno', email: 'joao.silva@example.com' },
+  { id: 'u1', name: 'João Silva', role: 'Aluno', email: 'joao.silva@example.com', curso: 'Ciência da Computação' },
   { id: 'u2', name: 'Mariana Souza', role: 'Professor', email: 'mariana.souza@example.com' },
   { id: 'u3', name: 'Carlos Pereira', role: 'Administrador', email: 'carlos.pereira@example.com' },
-  { id: 'u4', name: 'Ana Costa', role: 'Aluno', email: 'ana.costa@example.com' },
+  { id: 'u4', name: 'Ana Costa', role: 'Aluno', email: 'ana.costa@example.com', curso: 'Design e Web' },
   { id: 'u5', name: 'Roberto Santos', role: 'Professor', email: 'roberto.santos@example.com' },
-  { id: 'u6', name: 'Lucia Ferreira', role: 'Aluno', email: 'lucia.ferreira@example.com' }
+  { id: 'u6', name: 'Lucia Ferreira', role: 'Aluno', email: 'lucia.ferreira@example.com', curso: 'Engenharia' }
 ]
 
-// Mock applicants per vaga for professor views
 export const mockApplicants = [
   { id: 'ap1', vagaId: 'v1', nome: 'João Silva', curso: 'Ciência da Computação', email: 'joao.silva@example.com', grade: 9.2, descricao: 'Já auxiliei colegas em listas e tenho facilidade em explicar conceitos.', selected: false, relatorio: '' },
   { id: 'ap2', vagaId: 'v1', nome: 'Mariana Souza', curso: 'Ciência da Computação', email: 'mariana.souza@example.com', grade: 8.7, descricao: 'Participei de projetos de extensão e tenho disponibilidade no horário solicitado.', selected: true, relatorio: 'Atuou como monitor na disciplina no semestre anterior com desempenho satisfatório.' },
