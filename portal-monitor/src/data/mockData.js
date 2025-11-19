@@ -42,7 +42,6 @@ export const mockVagas = [
   }
 ]
 
-// MODIFICAÇÃO: Adicionado studentId e studentName para permitir agrupamento
 export const mockApplications = [
   { id: 'a1', vagaId: 'v1', vaga: 'Monitor de Algoritmos', status: 'Em Análise', professor: 'Dr. Silva', studentId: 'u1', studentName: 'João Silva', studentEmail: 'joao.silva@example.com' },
   { id: 'a2', vagaId: 'v2', vaga: 'Monitor de Banco de Dados', status: 'Aceito', professor: 'Profa. Almeida', studentId: 'u1', studentName: 'João Silva', studentEmail: 'joao.silva@example.com' },
@@ -51,16 +50,16 @@ export const mockApplications = [
   { id: 'a5', vagaId: 'v5', vaga: 'Monitor de Cálculo I', status: 'Em Análise', professor: 'Dr. Fernandes', studentId: 'u4', studentName: 'Ana Costa', studentEmail: 'ana.costa@example.com' }
 ]
 
+// MODIFICAÇÃO: Adicionado 'grade' (CR) para os Alunos
 export const mockUsers = [
-  { id: 'u1', name: 'João Silva', role: 'Aluno', email: 'joao.silva@example.com', curso: 'Ciência da Computação' },
+  { id: 'u1', name: 'João Silva', role: 'Aluno', email: 'joao.silva@example.com', curso: 'Ciência da Computação', grade: 9.2 },
   { id: 'u2', name: 'Mariana Souza', role: 'Professor', email: 'mariana.souza@example.com' },
   { id: 'u3', name: 'Carlos Pereira', role: 'Administrador', email: 'carlos.pereira@example.com' },
-  { id: 'u4', name: 'Ana Costa', role: 'Aluno', email: 'ana.costa@example.com', curso: 'Design e Web' },
+  { id: 'u4', name: 'Ana Costa', role: 'Aluno', email: 'ana.costa@example.com', curso: 'Design e Web', grade: 8.5 },
   { id: 'u5', name: 'Roberto Santos', role: 'Professor', email: 'roberto.santos@example.com' },
-  { id: 'u6', name: 'Lucia Ferreira', role: 'Aluno', email: 'lucia.ferreira@example.com', curso: 'Engenharia' }
+  { id: 'u6', name: 'Lucia Ferreira', role: 'Aluno', email: 'lucia.ferreira@example.com', curso: 'Engenharia', grade: 7.8 }
 ]
 
-// Mock applicants per vaga for professor views
 export const mockApplicants = [
   { id: 'ap1', vagaId: 'v1', nome: 'João Silva', curso: 'Ciência da Computação', email: 'joao.silva@example.com', grade: 9.2, descricao: 'Já auxiliei colegas em listas e tenho facilidade em explicar conceitos.', selected: false, relatorio: '' },
   { id: 'ap2', vagaId: 'v1', nome: 'Mariana Souza', curso: 'Ciência da Computação', email: 'mariana.souza@example.com', grade: 8.7, descricao: 'Participei de projetos de extensão e tenho disponibilidade no horário solicitado.', selected: true, relatorio: 'Atuou como monitor na disciplina no semestre anterior com desempenho satisfatório.' },
