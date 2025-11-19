@@ -48,7 +48,7 @@ export default function App() {
               <Route path="/admin/vagas/:id/editar" element={<ProtectedRoute allowedTypes={['admin']}><CreateVagaPage mode="edit" /></ProtectedRoute>} />
               <Route path="/admin/users/:id" element={<ProtectedRoute allowedTypes={['admin']}><AdminUserDetailPage /></ProtectedRoute>} />
               
-              {/* --- NOVAS ROTAS DOS CARDS --- */}
+              {/* NOVAS ROTAS DOS CARDS */}
               <Route path="/admin/vagas" element={<ProtectedRoute allowedTypes={['admin']}><AdminVagasPage /></ProtectedRoute>} />
               <Route path="/admin/candidaturas" element={<ProtectedRoute allowedTypes={['admin']}><AdminCandidaturasPage /></ProtectedRoute>} />
               <Route path="/admin/usuarios" element={<ProtectedRoute allowedTypes={['admin']}><AdminUsersListPage /></ProtectedRoute>} />
