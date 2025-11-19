@@ -15,8 +15,6 @@ import AdministratorDashboard from './pages/AdministratorDashboard'
 import PublicDashboard from './pages/PublicDashboard'
 import CreateVagaPage from './pages/CreateVagaPage'
 import AdminUserDetailPage from './pages/AdminUserDetailPage'
-
-// Novas páginas que vamos criar
 import AdminVagasPage from './pages/AdminVagasPage'
 import AdminCandidaturasPage from './pages/AdminCandidaturasPage'
 import AdminUsersListPage from './pages/AdminUsersListPage'
