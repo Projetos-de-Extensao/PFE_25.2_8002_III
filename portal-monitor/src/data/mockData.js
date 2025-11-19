@@ -31,8 +31,7 @@ export const mockVagas = [
     professor: 'Dr. Pereira',
     descricao: 'Durante o horário de almoço, realize uma sessão de ajuda/estudo duas vezes por semana para auxiliar os alunos com as tarefas da disciplina e responder a quaisquer perguntas.',
     tags: ['Matemática', 'Teoria', 'Provas']
-  }
-  ,
+  },
   {
     id: 'v5',
     titulo: 'Monitor de Cálculo I',
@@ -50,6 +49,16 @@ export const mockApplications = [
   { id: 'a4', vagaId: 'v3', vaga: 'Monitor de Front-end', status: 'Em Análise', professor: 'Prof. Costa' }
 ]
 
+// Mock users global para cálculos de estatísticas
+export const mockUsers = [
+  { id: 'u1', name: 'João Silva', role: 'Aluno', email: 'joao.silva@example.com' },
+  { id: 'u2', name: 'Mariana Souza', role: 'Professor', email: 'mariana.souza@example.com' },
+  { id: 'u3', name: 'Carlos Pereira', role: 'Administrador', email: 'carlos.pereira@example.com' },
+  { id: 'u4', name: 'Ana Costa', role: 'Aluno', email: 'ana.costa@example.com' },
+  { id: 'u5', name: 'Roberto Santos', role: 'Professor', email: 'roberto.santos@example.com' },
+  { id: 'u6', name: 'Lucia Ferreira', role: 'Aluno', email: 'lucia.ferreira@example.com' }
+]
+
 // Mock applicants per vaga for professor views
 export const mockApplicants = [
   { id: 'ap1', vagaId: 'v1', nome: 'João Silva', curso: 'Ciência da Computação', email: 'joao.silva@example.com', grade: 9.2, descricao: 'Já auxiliei colegas em listas e tenho facilidade em explicar conceitos.', selected: false, relatorio: '' },
@@ -59,4 +68,4 @@ export const mockApplicants = [
   { id: 'ap5', vagaId: 'v3', nome: 'Lucas Almeida', curso: 'Design e Web', email: 'lucas.almeida@example.com', grade: 8.0, descricao: 'Tenho interesse em orientação e revisão de exercícios.', selected: false, relatorio: '' }
 ]
 
-export default { mockVagas, mockApplications }
+export default { mockVagas, mockApplications, mockUsers, mockApplicants }
